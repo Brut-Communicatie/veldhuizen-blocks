@@ -19,58 +19,81 @@
 	display: flex;
 	flex-direction: column;
 	text-decoration: none !important;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25),
-		0 2px 2px rgba(0, 0, 0, 0.20),
-		0 4px 4px rgba(0, 0, 0, 0.15),
-		0 8px 8px rgba(0, 0, 0, 0.10),
-		0 16px 16px rgba(0, 0, 0, 0.05);
-  margin-bottom: 10px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+		0 2px 2px rgba(0, 0, 0, 0.10);
+	transition: box-shadow .3s ease;
+	margin-bottom: 10px;
+	overflow: hidden;
+
+	&__square {
+		width: 10px;
+		height: 10px;
+		display: block;
+		position: absolute;
+		left: 50%;
+		margin-left: -5px;
+		top: -5px;
+		background-color: #fff;
+		transform: rotateZ(45deg);
+		z-index: 0;
+	}
+
 	&__info {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    transition: all .3s ease;
-
+		background-color: #fff;
+		z-index: 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: relative;
+		transition: all .3s ease;
+		padding: 10px 0;
 	}
 
 	p {
 		color: orangered;
-
 		transform: translateY(1.3rem);
 		margin: 0;
-    transition: all .25s ease;
-    position: absolute;
-    opacity: 0;
+		transition: all .25s ease;
+		position: absolute;
+		opacity: 0;
+		z-index: 3;
 	}
 
 	h5 {
-		color: black;
+		color: rgb(94, 94, 94);
 		text-decoration: none;
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 20px;
-    transition: all .4s ease;
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 18px;
+		transition: all .4s ease;
+		z-index: 3;
+		position: relative;
 	}
 
-	img{
+	img {
 		transition: opacity .25s ease;
 	}
 
 	&:hover {
+
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15),
+			0 2px 2px rgba(0, 0, 0, 0.15),
+			0 4px 4px rgba(0, 0, 0, 0.15),
+			0 8px 8px rgba(0, 0, 0, 0.15);
+
 		p {
 			display: block;
-      transform: translateY(1.25rem);
-      opacity: 1;
+			transform: translateY(1.25rem);
+			opacity: 1;
 		}
-    
+
 		img {
 			opacity: 0.5;
-    }
-    .block__info{
-      transform: translateY(-1.5rem);
-    }
+		}
+
+		.block__info {
+			transform: translateY(-1.5rem);
+		}
 	}
 }

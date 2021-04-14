@@ -124,9 +124,8 @@ registerBlockType( 'cgb/block-veldhuizen-nav', {
 		}
 
 		return (
-			<div class="preview">
-				<div class="preview__left">
-				<h2>Selecteer product:</h2>
+			<div className="truckblock">
+				<div className="truckblock__left">
 				<select onChange={e => setPage(e.target.value)} value={props.attributes.selectedPage ? props.attributes.selectedPage : null}>
 					{
 						props.attributes.pages.map(page => {
@@ -140,17 +139,17 @@ registerBlockType( 'cgb/block-veldhuizen-nav', {
 					}
 				</select>
 				</div>
-				<div class="preview__right">
+				<div className="truckblock__right">
 					{props.attributes.selectedPage ? 
 						null : 'Selecteer een pagina'
 					}
 					{ props.attributes.selectedPage && props.attributes.loaded ? 
 					(
-						<div class="block">
+						<div className="block">
 							{props.attributes.image ? (
 								<img src={props.attributes.image} />
 							) : 'Geen afbeelding gevonden'}
-							<div class="block__title">
+							<div className="block__title">
 								<h4>{props.attributes.title}</h4> 
 							</div>
 						</div>

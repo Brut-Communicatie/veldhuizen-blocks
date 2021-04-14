@@ -85,10 +85,20 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 			'render_callback' => 'render_veldhuizen_block',
 		)
 	);
+	register_block_type(
+		'cgb/veldhuizen-nav-container', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_nav_container',
+		)
+	);
 }
 
 function render_veldhuizen_block( $attributes ){
-
 	$link = $attributes['link'];
 	$image = $attributes['image'];
 	$title = $attributes['title'];
@@ -98,6 +108,7 @@ function render_veldhuizen_block( $attributes ){
 	echo '<a class="block" href="'. $link .'">';
 	echo '<img src="'. $image .'" alt="Afbeelding van '. $title .'" />';
 	echo '<div class="block__info">';
+	echo '<div class="block__square"></div>';
 	echo '<h5>';
 	echo $attributes['title'];
 	echo '</h5>';
@@ -107,12 +118,15 @@ function render_veldhuizen_block( $attributes ){
 	
 	return ob_get_clean();
 
-	
-	// echo '<pre>';
-	// var_dump($attributes);
-	// echo '</pre>';
 
+}
 
+function veldhuizen_nav_container($attributes, $content){
+	ob_start();
+	echo '<div class="veldhuizen__container">';
+	echo $content;
+	echo '</div>';
+	return ob_get_clean();
 }
 
 // Hook: Block assets.

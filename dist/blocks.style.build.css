@@ -25,11 +25,31 @@
   -ms-flex-direction: column;
       flex-direction: column;
   text-decoration: none !important;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.05);
-  margin-bottom: 10px; }
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-box-shadow .3s ease;
+  transition: -webkit-box-shadow .3s ease;
+  -o-transition: box-shadow .3s ease;
+  transition: box-shadow .3s ease;
+  transition: box-shadow .3s ease, -webkit-box-shadow .3s ease;
+  margin-bottom: 10px;
+  overflow: hidden; }
+  .block__square {
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    top: -5px;
+    background-color: #fff;
+    -webkit-transform: rotateZ(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotateZ(45deg);
+    z-index: 0; }
   .block__info {
     background-color: #fff;
+    z-index: 2;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
@@ -38,9 +58,11 @@
         align-items: center;
     -ms-flex-direction: column;
         flex-direction: column;
+    position: relative;
     -webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
-    transition: all .3s ease; }
+    transition: all .3s ease;
+    padding: 10px 0; }
   .block p {
     color: orangered;
     -webkit-transform: translateY(1.3rem);
@@ -51,29 +73,47 @@
     -o-transition: all .25s ease;
     transition: all .25s ease;
     position: absolute;
-    opacity: 0; }
+    opacity: 0;
+    z-index: 3; }
   .block h5 {
-    color: black;
+    color: #5e5e5e;
     text-decoration: none;
     margin: 0;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 18px;
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
-    transition: all .4s ease; }
+    transition: all .4s ease;
+    z-index: 3;
+    position: relative; }
   .block img {
     -webkit-transition: opacity .25s ease;
     -o-transition: opacity .25s ease;
     transition: opacity .25s ease; }
-  .block:hover p {
-    display: block;
-    -webkit-transform: translateY(1.25rem);
-        -ms-transform: translateY(1.25rem);
-            transform: translateY(1.25rem);
-    opacity: 1; }
-  .block:hover img {
-    opacity: 0.5; }
-  .block:hover .block__info {
-    -webkit-transform: translateY(-1.5rem);
-        -ms-transform: translateY(-1.5rem);
-            transform: translateY(-1.5rem); }
+  .block:hover {
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15); }
+    .block:hover p {
+      display: block;
+      -webkit-transform: translateY(1.25rem);
+          -ms-transform: translateY(1.25rem);
+              transform: translateY(1.25rem);
+      opacity: 1; }
+    .block:hover img {
+      opacity: 0.5; }
+    .block:hover .block__info {
+      -webkit-transform: translateY(-1.5rem);
+          -ms-transform: translateY(-1.5rem);
+              transform: translateY(-1.5rem); }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.veldhuizen__container {
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(33% - 10px), 1fr));
+  grid-gap: 10px; }

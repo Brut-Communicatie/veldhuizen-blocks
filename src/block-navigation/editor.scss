@@ -1,0 +1,16 @@
+.vh{
+    &__container{
+        padding: 10px;
+        background-color: rgb(231, 231, 231);
+      
+
+        .block-editor-block-list__layout{
+            display: flex;
+            flex-wrap: wrap;
+
+            > div{
+                width: 33%;
+            }
+        }
+    }
+}
