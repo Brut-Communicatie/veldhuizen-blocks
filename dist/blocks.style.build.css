@@ -74,7 +74,25 @@
     transition: all .25s ease;
     position: absolute;
     opacity: 0;
-    z-index: 3; }
+    z-index: 3;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .block p svg {
+      width: 10px;
+      height: 10px;
+      margin-left: 5px;
+      -webkit-transition: -webkit-transform .4s ease;
+      transition: -webkit-transform .4s ease;
+      -o-transition: transform .4s ease;
+      transition: transform .4s ease;
+      transition: transform .4s ease, -webkit-transform .4s ease;
+      -webkit-transform: translateY(1px) translateX(-5px);
+          -ms-transform: translateY(1px) translateX(-5px);
+              transform: translateY(1px) translateX(-5px); }
   .block h5 {
     color: #5e5e5e;
     text-decoration: none;
@@ -94,11 +112,16 @@
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15), 0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15); }
     .block:hover p {
-      display: block;
-      -webkit-transform: translateY(1.25rem);
-          -ms-transform: translateY(1.25rem);
-              transform: translateY(1.25rem);
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-transform: translateY(1.5rem);
+          -ms-transform: translateY(1.5rem);
+              transform: translateY(1.5rem);
       opacity: 1; }
+      .block:hover p svg {
+        -webkit-transform: translateY(1px) translateX(0px);
+            -ms-transform: translateY(1px) translateX(0px);
+                transform: translateY(1px) translateX(0px); }
     .block:hover img {
       opacity: 0.5; }
     .block:hover .block__info {
@@ -117,3 +140,26 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(calc(33% - 10px), 1fr));
   grid-gap: 10px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.veldhuizen__container--intro {
+  width: 1000px;
+  margin: 0 auto;
+  border-bottom: 1px solid #b6b6b6;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  .veldhuizen__container--intro h2 {
+    margin: 0;
+    text-transform: uppercase;
+    color: green; }
+  .veldhuizen__container--intro p {
+    margin: 0; }

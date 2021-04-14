@@ -58,6 +58,16 @@
 		position: absolute;
 		opacity: 0;
 		z-index: 3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		svg {
+			width: 10px;
+			height: 10px;
+			margin-left: 5px;
+			transition: transform .4s ease;
+			transform: translateY(1px) translateX(-5px);
+		}
 	}
 
 	h5 {
@@ -83,9 +93,13 @@
 			0 8px 8px rgba(0, 0, 0, 0.15);
 
 		p {
-			display: block;
-			transform: translateY(1.25rem);
+			display: flex;
+			transform: translateY(1.50rem);
 			opacity: 1;
+
+			svg{
+				transform: translateY(1px) translateX(0px);
+			}
 		}
 
 		img {
