@@ -61,6 +61,10 @@
     -webkit-transition: all .4s ease;
     -o-transition: all .4s ease;
     transition: all .4s ease; }
+  .block img {
+    -webkit-transition: opacity .25s ease;
+    -o-transition: opacity .25s ease;
+    transition: opacity .25s ease; }
   .block:hover p {
     display: block;
     -webkit-transform: translateY(1.25rem);

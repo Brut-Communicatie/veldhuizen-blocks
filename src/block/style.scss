@@ -55,6 +55,10 @@
     transition: all .4s ease;
 	}
 
+	img{
+		transition: opacity .25s ease;
+	}
+
 	&:hover {
 		p {
 			display: block;
