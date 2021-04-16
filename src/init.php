@@ -108,50 +108,24 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 			'render_callback' => 'veldhuizen_intro',
 		)
 	);
+
+	register_block_type(
+		'cgb/veldhuizen-banner', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_banner',
+		)
+	);
 }
 
-function render_veldhuizen_block( $attributes ){
-	$link = $attributes['link'];
-	$image = $attributes['image'];
-	$title = $attributes['title'];
-
-	ob_start(); 
-
-	echo '<a class="block" href="'. $link .'">';
-	echo '<img src="'. $image .'" alt="Afbeelding van '. $title .'" />';
-	echo '<div class="block__info">';
-	echo '<div class="block__square"></div>';
-	echo '<h5>';
-	echo $attributes['title'];
-	echo '</h5>';
-	echo '<p>lees meer <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></p>';
-	echo '</div>';
-	echo '</a>';
-	
-	return ob_get_clean();
-
-
-}
-
-function veldhuizen_nav_container($attributes, $content){
-	ob_start();
-	echo '<div class="veldhuizen__container">';
-	echo $content;
-	echo '</div>';
-	return ob_get_clean();
-}
-
-function veldhuizen_intro($attributes) {
-	$title = $attributes['title'];
-	$content = $attributes['content'];
-	ob_start();
-	
-	echo '<div class="veldhuizen__container--intro">';
-	echo '<h2>' . $title . '</h2>';
-	echo '<p>' . $content . '</p>';
-	echo '</div>';
-	return ob_get_clean();
-}
+include 'frontend/nav-block.php';
+include 'frontend/nav-container.php';
+include 'frontend/intro.php';
+include 'frontend/banner.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );
