@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Veldhuizen - navigatie
- * Plugin URI: https://github.com/ahmadawais/create-guten-block/
- * Description: Navigatie blokken Gutenberg voor Veldhuizen
+ * Plugin Name: Veldhuizen - Gutenberg
+ * Plugin URI: www.brutcommunicatie.nl
+ * Description: Gutenberg blokken voor Veldhuizen
  * Author: Leroy Davidson Descelles
  * Author URI: www.brutcommunicatie.nl
  * Version: 1.0.0

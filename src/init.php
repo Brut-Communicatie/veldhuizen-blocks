@@ -120,12 +120,25 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 			'render_callback' => 'veldhuizen_banner',
 		)
 	);
+
+	register_block_type(
+		'cgb/veldhuizen-slider', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_slider',
+		)
+	);
 }
 
 include 'frontend/nav-block.php';
 include 'frontend/nav-container.php';
 include 'frontend/intro.php';
 include 'frontend/banner.php';
+include 'frontend/slider.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );
