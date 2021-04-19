@@ -1,0 +1,21 @@
+.top{
+    &__banner{
+        background-color: #0b9a71;
+        width: 100%;
+        padding: 2rem 0;
+        display: flex;
+        justify-content: center;
+    }
+    &__content{
+        display: grid;
+        place-items: center;
+
+        h1{
+            margin: 0;
+            padding: 15px;
+            color: #fff;
+            border: 2px solid #fff;
+            text-transform: uppercase;
+        }
+    }
+}
