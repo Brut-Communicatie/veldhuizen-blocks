@@ -13,4 +13,5 @@ import './block/block.js';
 import './block-navigation/nav.js';
 import './intro/intro.js';
 import './banner/banner.js';
+import './product/container.js';
 import './product/product.js';
