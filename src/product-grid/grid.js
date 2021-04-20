@@ -26,24 +26,27 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  *                             registered; otherwise `undefined`.
  */
 
- registerBlockType( 'cgb/veldhuizen-image-grid', {
+ registerBlockType( 'cgb/veldhuizen-product-grid', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Image Grid' ), // Block title.
+	title: __( 'Veldhuizen Product Grid' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Image grid' ),
-		__( 'Image' ),
+		__( 'Product grid' ),
+		__( 'Product' ),
 	],
 
 	attributes: {
-        count: {
-            type: 'number',
+        products: {
+            type: 'object',
         },
-		url: {
-            type: 'string',
-        }
+		selectedProducts: {
+			type: 'string',
+		},
+		postsPerPage: {
+			type: 'string',
+		}
 	},
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -58,20 +61,55 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
 	 */
 	edit: ( props ) => {
 
-        if ( ! props.attributes.categories ) {
+        if ( ! props.attributes.products ) {
             wp.apiFetch( {
-                url: '/wp-json/wp/v2/categories'
+                url: '/wp-json/wp/v2/producten'
             } ).then ( categories => {
                 props.setAttributes( {
-                    categories: categories
+                    products: categories
                 })
             });
         }
 
-        console.log( props.attributes );
+		if ( ! props.attributes.products ) {
+			return 'Loading...'
+		}
+
+		if ( props.attributes.products && props.attributes.products.length == 0 ) {
+			return 'No products found, please add some.'
+		}		
+
+        console.log( props.attributes.products );
+
+		function updateProducts( e ) {
+			props.setAttributes({
+				selectedProducts: e.target.value,
+			});
+		}
+
+		function updatePostsPerPage( e ) {
+			props.setAttributes({
+				postsPerPage: e.target.value,
+			});
+		}
 
 		return (
-			true
+			<div className="veldhuizen__gallery">
+				<label>Producten</label>
+				<select onChange={ updateProducts } value={ props.attributes.selectedProducts } >
+					{
+						props.attributes.products.map( product => {
+							return (
+								<option value={ product.id } key={ product.key }>
+									{ product.title.rendered }
+								</option>
+							)
+						})
+					 }
+				</select>
+				<label>Producten per pagina</label>
+				<input type="text" onBlur={ updatePostsPerPage } value={ props.attributes.postsPerPage } ></input>
+			</div>
 		)
 	},
 
@@ -86,7 +124,7 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
 	 * @param {Object} props Props.
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
-	save: props => {
+	save: ( props ) => {
         return null;
     },
 } );

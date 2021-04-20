@@ -1,0 +1,11 @@
+.veldhuizen {
+    &__gallery {
+        width: 100%;
+        background-color: rgb(231, 231, 231);
+        padding: 25px;
+
+        label {
+            display: block;
+        }
+    }
+}

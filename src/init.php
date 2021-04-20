@@ -147,14 +147,14 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 	);
 
 	register_block_type(
-		'cgb/veldhuizen-image-grid', array(
+		'cgb/veldhuizen-product-grid', array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
 			'style'         => 'veldhuizen_nav-cgb-style-css',
 			// Enqueue blocks.build.js in the editor only.
 			'editor_script' => 'veldhuizen_nav-cgb-block-js',
 			// Enqueue blocks.editor.build.css in the editor only.
 			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
-			'render_callback' => 'veldhuizen_image_grid',
+			'render_callback' => 'veldhuizen_product_grid',
 		)
 	);
 }
@@ -169,3 +169,9 @@ include 'frontend/image-grid.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );
+
+function veldhuizen_product_grid( $attributes ) {
+	$products = get_products();
+	echo '<p>' + $attributes + '</p>';
+	die();
+}
