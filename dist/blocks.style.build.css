@@ -190,3 +190,9 @@
     color: #fff;
     border: 2px solid #fff;
     text-transform: uppercase; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
