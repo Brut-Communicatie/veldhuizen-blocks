@@ -1,5 +1,6 @@
 <?php
 function render_veldhuizen_block( $attributes ){
+	
 	$link = $attributes['link'];
 	$image = $attributes['image'];
 	$title = $attributes['title'];
