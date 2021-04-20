@@ -68,7 +68,6 @@ registerBlockType( 'cgb/block-veldhuizen-nav', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-		// Creates a <p class='wp-block-cgb-block-veldhuizen-nav'></p>.
 
 		const setPage = (page) => {
 			console.log(page)
