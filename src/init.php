@@ -157,7 +157,6 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 			'render_callback' => 'veldhuizen_product',
 		)
 	);
-
 }
 
 include 'frontend/nav-block.php';
