@@ -165,13 +165,7 @@ include 'frontend/intro.php';
 include 'frontend/banner.php';
 include 'frontend/slider.php';
 include 'frontend/product.php';
-include 'frontend/image-grid.php';
+include 'frontend/product-grid.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );
-
-function veldhuizen_product_grid( $attributes ) {
-	$products = get_products();
-	echo '<p>' + $attributes + '</p>';
-	die();
-}
