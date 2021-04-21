@@ -11,8 +11,7 @@ import './style.scss';
 import { InnerBlocks } from '@wordpress/block-editor';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { MediaUpload } = wp.blockEditor;
-const { Button } = wp.components;
+
 /**
  * Register: aa Gutenberg Block.
  *
@@ -39,21 +38,16 @@ const { Button } = wp.components;
 	],
 
 	attributes: {
-		imgArray: {
-			type: 'array',
-
-			imgURL: {
-				type: 'string',
-			},
-			imgID: {
-				type: 'number',
-			},
-			imgAlt: {
-				type: 'string',
-			}
+        products: {
+            type: 'object',
+        },
+		selectedProducts: {
+			type: 'string',
+		},
+		postsPerPage: {
+			type: 'string',
 		}
 	},
-
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
 	 * This represents what the editor will render when the block is used.
@@ -67,71 +61,54 @@ const { Button } = wp.components;
 	 */
 	edit: ( props ) => {
 
-		// FUNCTIONS
-		const onFileSelect = ( img ) => {
+        if ( ! props.attributes.products ) {
+            wp.apiFetch( {
+                url: '/wp-json/wp/v2/producten'
+            } ).then ( categories => {
+                props.setAttributes( {
+                    products: categories
+                })
+            });
+        }
 
-			for (let i = 0; i < img.length; i++) {
-				// console.log(img[i]['url']);
-				// console.log(img[i]['id']);
-				// console.log(img[i]['alt']);
-
-				props.setAttributes({
-					imgArray: {
-						imgURL: img[i]['url'],
-						imgID: img[i]['id'],
-						imgAlt: img[i]['alt']
-					}
-				});
-			}
-
-
-			// props.setAttributes({
-			// 	imgURL: img.url,
-			// 	imgID: img.id,
-			// 	imgAlt: img.alt
-			// });
-			
+		if ( ! props.attributes.products ) {
+			return 'Loading...'
 		}
 
-		const onRemoveImg = ( ) => {
+		if ( props.attributes.products && props.attributes.products.length == 0 ) {
+			return 'No products found, please add some.'
+		}		
+
+        console.log( props.attributes.products );
+
+		function updateProducts( e ) {
 			props.setAttributes({
-				imgURL: null,
-				imgID: null,
-				imgAlt: null
+				selectedProducts: e.target.value,
 			});
 		}
 
-		console.log(props.attributes.imgArray);
+		function updatePostsPerPage( e ) {
+			props.setAttributes({
+				postsPerPage: e.target.value,
+			});
+		}
 
-		// RETURN TO BACKEND
 		return (
-		
 			<div className="veldhuizen__gallery">
-				{
-					(props.attributes.imgArray) ? (
-						<div className="img-upload-wrapper" >
-							
-							<img 
-								src={props.attributes.imgArray['imgURL']}
-								alt={props.attributes.imgArray['imgAlt']} 
-							/>
-							{ 
-								(props.isSelected) ? (
-									<Button 
-										onClick={onRemoveImg}
-									>Remove Image</Button>
-								) : null 
-							}
-						</div>
-					) : (
-						<MediaUpload 
-							onSelect={ onFileSelect } 
-							value={ props.attributes.imgID }
-							multiple={ true }
-							render={({open}) => <Button onClick={open} > Open Library </Button> } 
-						/>
-					)
-				}
+				<label>Producten</label>
+				<select onChange={ updateProducts } value={ props.attributes.selectedProducts } >
+					{
+						props.attributes.products.map( product => {
+							return (
+								<option value={ product.id } key={ product.key }>
+									{ product.title.rendered }
+								</option>
+							)
+						})
+					 }
+				</select>
+				<label>Producten per pagina</label>
+				<input type="text" onBlur={ updatePostsPerPage } value={ props.attributes.postsPerPage } ></input>
 			</div>
 		)
 	},
@@ -148,10 +125,6 @@ const { Button } = wp.components;
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-        // return null;
-		<img 
-			src={props.attributes.imgURL}
-			alt={props.attributes.imgAlt} 
-		/>
+        return null;
     },
 } );
