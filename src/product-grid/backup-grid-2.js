@@ -13,7 +13,6 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { MediaUpload } = wp.blockEditor;
 const { Button } = wp.components;
-const { Text } = wp.components;
 /**
  * Register: aa Gutenberg Block.
  *
@@ -40,23 +39,19 @@ const { Text } = wp.components;
 	],
 
 	attributes: {
+		imgArray: {
+			type: 'array',
 
-			
-			imgArray: {
-				type: 'array',
-	
-				imgURL: {
-					type: 'string',
-				},
-				imgID: {
-					type: 'number',
-				},
-				imgAlt: {
-					type: 'string',
-				}
+			imgURL: {
+				type: 'string',
+			},
+			imgID: {
+				type: 'number',
+			},
+			imgAlt: {
+				type: 'string',
 			}
-		
-		
+		}
 	},
 
 	/**
@@ -74,43 +69,44 @@ const { Text } = wp.components;
 
 		// FUNCTIONS
 		const onFileSelect = ( img ) => {
-			props.setAttributes({ 
-					imgArray: img.map( ( img ) => { 
-						return {
-							imgID: img.id,
-							imgURL: img.url,
-							imgAlt: img.alt	
-						}
-				})
-			});
+			for (let i = 0; i < img.length; i++) {
+				props.setAttributes({
+					imgArray: {
+						imgURL: img[i]['url'],
+						imgID: img[i]['id'],
+						imgAlt: img[i]['alt']
+					}
+				});
+			}
 		}
 
 		const onRemoveImg = ( ) => {
 			props.setAttributes({
-				imgArray: null
+				imgURL: null,
+				imgID: null,
+				imgAlt: null
 			});
 		}
 
-
-		const imgList = props.attributes.imgArray;
-
+		console.log(props.attributes);
 
 		// RETURN TO BACKEND
 		return (
+		
 			<div className="veldhuizen__gallery">
 				{
 					(props.attributes.imgArray) ? (
 						<div className="img-upload-wrapper" >
-						
-					
-							{
-								imgList.map((img)  => 
-								<React.Fragment>
-								<img src={img.imgURL} />
-								</React.Fragment>
-								)
-							}
+							
+							<img 
+								src={props.attributes.imgArray['imgURL']}
+								alt={props.attributes.imgArray['imgAlt']} 
+							/>
 
+							<img 
+								src={props.attributes.imgArray['imgURL']}
+								alt={props.attributes.imgArray['imgAlt']} 
+							/>
 							{ 
 								(props.isSelected) ? (
 									<Button 
@@ -145,6 +141,9 @@ const { Text } = wp.components;
 	 */
 	save: ( props ) => {
         return null;
-
+		// <img 
+		// 	src={props.attributes.imgURL}
+		// 	alt={props.attributes.imgAlt} 
+		// />
     },
 } );
