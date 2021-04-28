@@ -1,11 +1,66 @@
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+// Tablets and small desktops
+$screen-lg-min: 992px;
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+@mixin mobile {
+    @content; 
+}
+@mixin tablet {
+    @media (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
+@mixin small-desktop {
+    @media (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
+@mixin large-screen {
+    @media (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
 .veldhuizen {
     &__gallery {
         width: 100%;
         background-color: rgb(231, 231, 231);
         padding: 25px;
 
-        label {
-            display: block;
+        .img-upload-wrapper {
+            margin: auto 0;
+
+            Button {
+                background-color: rgb(148, 0, 0);
+                color: white;
+                display: block;
+            }       
+             
+            @include mobile{
+                img {
+                    width: 100%;
+                }
+                img:hover {
+                    
+                }
+            }
+
+            @include tablet {
+                img {
+                    width: 45%;
+                    margin: 2% 2.5%;
+                }
+                Button {
+                    margin: 2.5%;
+                }
+            }
         }
     }
 }

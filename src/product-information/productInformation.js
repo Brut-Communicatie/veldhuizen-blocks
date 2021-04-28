@@ -1,5 +1,5 @@
 /**
- * BLOCK: veldhuizen-imagegrid
+ * BLOCK: veldhuizen-nav
  *
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
@@ -8,12 +8,9 @@
 //  Import CSS.
 import './editor.scss';
 import './style.scss';
-import { InnerBlocks } from '@wordpress/block-editor';
+
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { MediaUpload } = wp.blockEditor;
-const { Button } = wp.components;
-
 
 /**
  * Register: aa Gutenberg Block.
@@ -28,34 +25,20 @@ const { Button } = wp.components;
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-
- registerBlockType( 'cgb/veldhuizen-product-grid', {
+registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Product Grid' ), // Block title.
+	title: __( 'Veldhuizen Product Information' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Product grid' ),
-		__( 'Product' ),
+		__( 'Product information' ),
+		__( 'Information' ),
 	],
 
 	attributes: {
-		imgArray: {
-			type: 'array',
-	
-			imgURL: {
-				type: 'string',
-			},
-			imgID: {
-				type: 'number',
-			},
-			imgAlt: {
-				type: 'string',
-			}
-		}	
+		
 	},
-
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
 	 * This represents what the editor will render when the block is used.
@@ -69,57 +52,8 @@ const { Button } = wp.components;
 	 */
 	edit: ( props ) => {
 
-		// FUNCTIONS
-		const onFileSelect = ( img ) => {
-			props.setAttributes({ 
-					imgArray: img.map( ( img ) => { 
-						return {
-							imgID: img.id,
-							imgURL: img.url,
-							imgAlt: img.alt	
-						}
-				})
-			});
-		}
 
-		const onRemoveImg = ( ) => {
-			props.setAttributes({
-				imgArray: null
-			});
-		}
-
-
-		const imgList = props.attributes.imgArray;
-
-
-		// RETURN TO BACKEND
-		return (
-			<div className="veldhuizen__gallery">
-				{
-					(props.attributes.imgArray) ? (
-						<div className="img-upload-wrapper" >
-							
-							{
-								imgList.map((img)  => 
-									<img src={img.imgURL} alt={img.imgAlt} />
-								)
-							}
-
-							<Button className="remove-button"
-									onClick={onRemoveImg}
-							>Remove All Images</Button>
-						</div>
-					) : (
-						<MediaUpload 
-							onSelect={ onFileSelect } 
-							value={ props.attributes.imgID }
-							multiple={ true }
-							render={({open}) => <Button onClick={open} > Open Library </Button> } 
-						/>
-					)
-				}
-			</div>
-		)
+		return null;
 	},
 
 	/**
@@ -134,7 +68,6 @@ const { Button } = wp.components;
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-        return null;
-
-    },
+		return null;
+	},
 } );

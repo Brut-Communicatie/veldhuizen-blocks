@@ -157,6 +157,31 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 			'render_callback' => 'veldhuizen_product_grid',
 		)
 	);
+
+
+	register_block_type(
+		'cgb/veldhuizen-product-contact', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_product_contact',
+		)
+	);
+
+	register_block_type(
+		'cgb/block-veldhuizen-product_information', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_product_information',
+		)
+	);
 }
 
 include 'frontend/nav-block.php';
@@ -166,6 +191,8 @@ include 'frontend/banner.php';
 include 'frontend/slider.php';
 include 'frontend/product.php';
 include 'frontend/product-grid.php';
+include 'frontend/product-contact.php';
+include 'frontend/product-information.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );

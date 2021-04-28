@@ -14,4 +14,6 @@ import './block-navigation/nav.js';
 import './intro/intro.js';
 import './banner/banner.js';
 import './product/product.js';
-import './product-grid/grid.js'
+import './product-grid/grid.js';
+import './product-contact/contactButton.js';
+import './product-information/productInformation.js';

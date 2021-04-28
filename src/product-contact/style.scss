@@ -1,0 +1,17 @@
+.veldhuizen {
+	&__container {
+		&--product-contact {
+            position: relative;
+            width: 1000px;
+			margin: 0 auto;
+
+            button {
+                position: relative;
+                background-color: #ff5400;
+                color: white;
+                padding: 15px 45px;
+                margin: 1rem 0;
+            }
+		}
+	}
+}

@@ -1,0 +1,35 @@
+.veldhuizen {
+	&__container {
+		&--product-grid {
+			position: relative;
+			width: 1000px;
+			margin: 0 auto;
+			// box-shadow: 2px 2px 3px rgb(107, 107, 107);
+
+			.product-grid-wrapper {
+                width: 50%;
+
+				#big-image {
+					width: 100%;
+					display: block;
+                    margin-top: 1rem;
+				}
+
+				img {
+					width: 24%;
+					border: solid 1px rgb(78, 78, 78);
+				}
+
+				.gallery-pictures+.gallery-pictures {
+					margin-left: 1.3333333%;
+                    margin-top: 1em;
+				}
+
+				.gallery-pictures:nth-of-type(6) {
+					margin-left: 0px;
+				}
+
+			}
+		}
+	}
+}

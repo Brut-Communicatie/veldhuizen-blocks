@@ -102,11 +102,6 @@ const { Button } = wp.components;
 								src={props.attributes.imgArray['imgURL']}
 								alt={props.attributes.imgArray['imgAlt']} 
 							/>
-
-							<img 
-								src={props.attributes.imgArray['imgURL']}
-								alt={props.attributes.imgArray['imgAlt']} 
-							/>
 							{ 
 								(props.isSelected) ? (
 									<Button 

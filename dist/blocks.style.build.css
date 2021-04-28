@@ -196,3 +196,43 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.veldhuizen__container--product-grid {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto; }
+  .veldhuizen__container--product-grid .product-grid-wrapper {
+    width: 50%; }
+    .veldhuizen__container--product-grid .product-grid-wrapper #big-image {
+      width: 100%;
+      display: block;
+      margin-top: 1rem; }
+    .veldhuizen__container--product-grid .product-grid-wrapper img {
+      width: 24%;
+      border: solid 1px #4e4e4e; }
+    .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures + .gallery-pictures {
+      margin-left: 1.3333333%;
+      margin-top: 1em; }
+    .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(6) {
+      margin-left: 0px; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.veldhuizen__container--product-contact {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto; }
+  .veldhuizen__container--product-contact button {
+    position: relative;
+    background-color: #ff5400;
+    color: white;
+    padding: 15px 45px;
+    margin: 1rem 0; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/

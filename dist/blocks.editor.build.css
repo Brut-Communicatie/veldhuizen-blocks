@@ -108,5 +108,34 @@
   width: 100%;
   background-color: #e7e7e7;
   padding: 25px; }
-  .veldhuizen__gallery label {
-    display: block; }
+  .veldhuizen__gallery .img-upload-wrapper {
+    margin: auto 0; }
+    .veldhuizen__gallery .img-upload-wrapper Button {
+      background-color: #940000;
+      color: white;
+      display: block; }
+    .veldhuizen__gallery .img-upload-wrapper img {
+      width: 100%; }
+    @media (min-width: 576px) {
+      .veldhuizen__gallery .img-upload-wrapper img {
+        width: 45%;
+        margin: 2% 2.5%; }
+      .veldhuizen__gallery .img-upload-wrapper Button {
+        margin: 2.5%; } }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.veldhuizen__contact {
+  width: 100%;
+  background-color: #e7e7e7;
+  padding: 25px;
+  border: 3px solid #ff5400; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
