@@ -44,6 +44,9 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 		content: {
 			type: 'string',
 		},
+		products: {
+			type: 'object',
+		},
 	},
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -59,28 +62,30 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	edit: ( props ) => {
 
 		// FUNCTIONS
-		const updateTitle = (value) => {
-            props.setAttributes({
-                title: value,
-            });
-        }
         const updateContent = (value) => {
             props.setAttributes({
                 content: value,
             });
         }
 
+		if ( ! props.attributes.products ) {
+            wp.apiFetch( {
+                url: '/wp-json/wp/v2/producten'
+            } ).then ( categories => {
+                props.setAttributes( {
+                    products: categories
+                })
+            });
+        } 
+
+		console.log(props.attributes.products);
+
+		
 		// RETURN TO BACKEND
 		return (
 			<div className="veldhuizen__product-information">
-				<TextControl
-					label="Heading"
-					value={ props.attributes.title }
-					onChange= { (value) => updateTitle(value) }
-				/>
-
 				<TextareaControl 
-					label="Content"
+					label="Productinformatie"
 					value={ props.attributes.content }
 					onChange={ (value) => updateContent(value) }
 				/>

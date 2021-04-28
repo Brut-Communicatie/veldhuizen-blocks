@@ -3,10 +3,13 @@
 function veldhuizen_product_grid($attributes){
     ob_start();
 
+    $title = $attributes['title'];
+
     $images = $attributes['imgArray'];
 
     echo "<section class='veldhuizen__container--product-grid'>";
 
+    echo "<h1>" . $title . "</h1>";
     echo "<div class='product-grid-wrapper'>";
     echo "<img id='big-image' src='" . $images[0]['imgURL'] . "' />";
 

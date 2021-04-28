@@ -12,6 +12,8 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { MediaUpload } = wp.blockEditor;
 const { Button } = wp.components;
+import { TextControl, TextareaControl } from '@wordpress/components';
+
 
 
 /**
@@ -40,6 +42,9 @@ const { Button } = wp.components;
 	],
 
 	attributes: {
+		title: {
+			type: 'string',
+		},
 		imgArray: {
 			type: 'array',
 	
@@ -52,7 +57,8 @@ const { Button } = wp.components;
 			imgAlt: {
 				type: 'string',
 			}
-		}	
+		},
+	
 	},
 
 	/**
@@ -86,7 +92,12 @@ const { Button } = wp.components;
 				imgArray: null
 			});
 		}
-
+		
+		const updateTitle = (value) => {
+            props.setAttributes({
+                title: value,
+            });
+        }
 
 		const imgList = props.attributes.imgArray;
 
@@ -94,6 +105,11 @@ const { Button } = wp.components;
 		// RETURN TO BACKEND
 		return (
 			<div className="veldhuizen__gallery">
+				<TextControl 
+                    label="Heading"
+                    value={ props.attributes.title }
+                    onChange={ (value) => updateTitle(value) }
+                />
 				{
 					(props.attributes.imgArray) ? (
 						<div className="img-upload-wrapper" >
@@ -134,6 +150,5 @@ const { Button } = wp.components;
 	 */
 	save: ( props ) => {
         return null;
-
     },
 } );

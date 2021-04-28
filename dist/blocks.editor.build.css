@@ -139,3 +139,7 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.veldhuizen__product-information {
+  display: block;
+  padding: 10px;
+  background-color: #e0e0e0; }
