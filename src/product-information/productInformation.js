@@ -11,6 +11,7 @@ import './style.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+import { TextControl, TextareaControl } from '@wordpress/components';
 
 /**
  * Register: aa Gutenberg Block.
@@ -37,7 +38,12 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	],
 
 	attributes: {
-		
+		title: {
+			type: 'string',
+		},
+		content: {
+			type: 'string',
+		},
 	},
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -52,8 +58,34 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	 */
 	edit: ( props ) => {
 
+		// FUNCTIONS
+		const updateTitle = (value) => {
+            props.setAttributes({
+                title: value,
+            });
+        }
+        const updateContent = (value) => {
+            props.setAttributes({
+                content: value,
+            });
+        }
 
-		return null;
+		// RETURN TO BACKEND
+		return (
+			<div className="veldhuizen__product-information">
+				<TextControl
+					label="Heading"
+					value={ props.attributes.title }
+					onChange= { (value) => updateTitle(value) }
+				/>
+
+				<TextareaControl 
+					label="Content"
+					value={ props.attributes.content }
+					onChange={ (value) => updateContent(value) }
+				/>
+			</div>
+		)
 	},
 
 	/**

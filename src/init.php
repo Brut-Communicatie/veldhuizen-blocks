@@ -172,7 +172,7 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 	);
 
 	register_block_type(
-		'cgb/block-veldhuizen-product_information', array(
+		'cgb/block-veldhuizen-product-information', array(
 			// Enqueue blocks.style.build.css on both frontend & backend.
 			'style'         => 'veldhuizen_nav-cgb-style-css',
 			// Enqueue blocks.build.js in the editor only.

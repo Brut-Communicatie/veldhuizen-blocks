@@ -236,3 +236,22 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.veldhuizen__container--product-info {
+  width: 1000px;
+  margin: 0 auto;
+  border-top: 1px solid #b6b6b6;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  .veldhuizen__container--product-info h2 {
+    margin: 0 0 1rem;
+    color: green; }
+  .veldhuizen__container--product-info p {
+    margin: 0 0 0.5rem;
+    line-height: 26px;
+    font-size: 17px;
+    color: grey; }

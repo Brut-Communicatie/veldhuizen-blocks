@@ -1,0 +1,26 @@
+.veldhuizen {
+    &__container {
+        &--product-info {
+            width: 1000px;
+            margin: 0 auto;
+            border-top: 1px solid rgb(182, 182, 182);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                margin: 0 0 1rem;
+                color: green;
+            }
+
+            p{
+                margin: 0 0 0.5rem;
+                line-height: 26px;
+                font-size: 17px;
+                color: grey;
+            }
+        }
+    }
+}
