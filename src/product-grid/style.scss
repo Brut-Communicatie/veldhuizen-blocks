@@ -4,24 +4,31 @@
 			position: relative;
 			width: 1000px;
 			margin: 0 auto;
-			// box-shadow: 2px 2px 3px rgb(107, 107, 107);
+			background-color: white;
+			padding-left: 2rem;
+			box-shadow: 2px 0 0  rgb(107, 107, 107);
 
 			h1 {
 				font-size: 2.5em;
 				color: #0b9a71;
+				padding-top: 1rem;
 			}
 
 			.product-grid-wrapper {
                 width: 50%;
 
 				#big-image {
+					// object-fit: cover;
 					width: 100%;
+					height: auto;
 					display: block;
                     margin-top: 1rem;
 				}
 
 				img {
+					object-fit: cover;
 					width: 24%;
+					height: 76px;
 					border: solid 1px rgb(78, 78, 78);
 				}
 

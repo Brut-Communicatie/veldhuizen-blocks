@@ -11,7 +11,6 @@ import './style.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-import { TextControl, TextareaControl } from '@wordpress/components';
 
 /**
  * Register: aa Gutenberg Block.
@@ -26,24 +25,18 @@ import { TextControl, TextareaControl } from '@wordpress/components';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'cgb/block-veldhuizen-product-information', {
+registerBlockType( 'cgb/block-veldhuizen-product-footer', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Product Information' ), // Block title.
+	title: __( 'Veldhuizen Product Footer' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Product information' ),
-		__( 'Information' ),
+		__( 'Product footer' ),
+		__( 'Footer' ),
 	],
 
 	attributes: {
-		title: {
-			type: 'string',
-		},
-		content: {
-			type: 'string',
-		},
 		products: {
 			type: 'array',
 			
@@ -71,20 +64,28 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	 */
 	edit: ( props ) => {
 		// FUNCTIONS
-        const updateContent = (value) => {
-            props.setAttributes({
-                content: value,
+		if ( ! props.attributes.products ) {
+            wp.apiFetch( {
+                url: '/wp-json/wp/v2/producten'
+            } ).then ( (items) => {
+                props.setAttributes( {
+                    products: items.map( (items) => {
+						return {
+							productId: items.id,
+							productTitle: items.title['rendered'],
+							productUrl: items.link,
+						}
+					})
+				})
             });
-        }
+        } 
+		let productsList = props.attributes.products;
+		console.log(productsList)
 		
 		// RETURN TO BACKEND
 		return (
-			<div className="veldhuizen__product-information">
-				<TextareaControl 
-					label="Productinformatie"
-					value={ props.attributes.content }
-					onChange={ (value) => updateContent(value) }
-				/>
+			<div className="veldhuizen__product-footer">
+                <h4>Footer links</h4>
 			</div>
 		)
 	},
