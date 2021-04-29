@@ -18,11 +18,11 @@
                 width: 50%;
 
 				#big-image {
-					// object-fit: cover;
 					width: 100%;
 					height: auto;
 					display: block;
                     margin-top: 1rem;
+					opacity: 1;
 				}
 
 				img {
@@ -30,6 +30,10 @@
 					width: 24%;
 					height: 76px;
 					border: solid 1px rgb(78, 78, 78);
+				}
+
+				img:hover {
+					opacity: 0.6;
 				}
 
 				.gallery-pictures+.gallery-pictures {

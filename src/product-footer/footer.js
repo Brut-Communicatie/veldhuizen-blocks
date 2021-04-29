@@ -9,8 +9,16 @@
 import './editor.scss';
 import './style.scss';
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const {
+	__
+} = wp.i18n; // Import __() from wp.i18n
+const {
+	registerBlockType
+} = wp.blocks; // Import registerBlockType() from wp.blocks
+import {
+	TextControl,
+	TextareaControl
+} from '@wordpress/components';
 
 /**
  * Register: aa Gutenberg Block.
@@ -25,21 +33,25 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'cgb/block-veldhuizen-product-footer', {
+registerBlockType('cgb/block-veldhuizen-product-footer', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Product Footer' ), // Block title.
+	title: __('Veldhuizen Product Footer'), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'Veldhuizen' ),
-		__( 'Product footer' ),
-		__( 'Footer' ),
+		__('Veldhuizen'),
+		__('Product footer'),
+		__('Footer'),
 	],
 
 	attributes: {
+		fetched: {
+			type: 'boolean',
+			default: false,
+		},
 		products: {
 			type: 'array',
-			
+
 			productTitle: {
 				type: 'string',
 			},
@@ -62,31 +74,49 @@ registerBlockType( 'cgb/block-veldhuizen-product-footer', {
 	 * @param {Object} props Props.
 	 * @returns {Mixed} JSX Component.
 	 */
-	edit: ( props ) => {
+	edit: (props) => {
 		// FUNCTIONS
-		if ( ! props.attributes.products ) {
-            wp.apiFetch( {
-                url: '/wp-json/wp/v2/producten'
-            } ).then ( (items) => {
-                props.setAttributes( {
-                    products: items.map( (items) => {
-						return {
-							productId: items.id,
-							productTitle: items.title['rendered'],
-							productUrl: items.link,
-						}
+
+        // FETCH ALL PRODUCTS ON WORDPRESS SITE
+		const fetchProducts = () => {
+			if (!props.attributes.fetched) {
+				wp.apiFetch({
+					url: '/wp-json/wp/v2/producten?per_page=100'
+				}).then((res) => {
+					props.setAttributes({
+						fetched: true,
 					})
+					props.setAttributes({
+						products: res.map((res) => {
+							return {
+								productId: res.id,
+								productTitle: res.title['rendered'],
+								productUrl: res.link,
+							}
+						})
+					})
+				}).catch(err => {
+					throw err;
 				})
-            });
-        } 
-		let productsList = props.attributes.products;
-		console.log(productsList)
-		
+			}
+		}
+
+        // RESET FETCHED VALUE, SO FETCH FUNCTIONS GETS ALL PRODUCTS AGAIN
+        window.onload = () => {
+            props.setAttributes({
+                fetched: false,
+            })
+        }
+
+
+        console.log(props.attributes.fetched)
+		fetchProducts();
+
 		// RETURN TO BACKEND
-		return (
-			<div className="veldhuizen__product-footer">
-                <h4>Footer links</h4>
-			</div>
+		return ( 
+            <div className = "veldhuizen__product-footer">
+			<h4> Footer </h4> 
+            </div>
 		)
 	},
 
@@ -101,7 +131,7 @@ registerBlockType( 'cgb/block-veldhuizen-product-footer', {
 	 * @param {Object} props Props.
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
-	save: ( props ) => {
+	save: (props) => {
 		return null;
 	},
-} );
+});

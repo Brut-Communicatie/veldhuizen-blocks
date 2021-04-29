@@ -14,7 +14,7 @@
                 position: absolute;
                 bottom: -140px;
                 height: 1px;
-                width: 50px;
+                width: 800px;
                 border-top: 1px solid rgb(145, 145, 145);
             }
 
@@ -36,6 +36,11 @@
                 color: white;
                 padding: 15px 45px;
                 margin: 1rem 0;
+
+                :before {
+                    position: initial;
+                    border: none;
+                }
 
                 i {
                     float: left;

@@ -205,6 +205,7 @@ include 'frontend/product.php';
 include 'frontend/product-grid.php';
 include 'frontend/product-contact.php';
 include 'frontend/product-information.php';
+include 'frontend/product-footer.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );
