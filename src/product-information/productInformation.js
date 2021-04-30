@@ -88,8 +88,9 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 				/> */}
 				<div className="wrapper-richtext">
 					<RichText
-					placeholder="Taart"
+					placeholder="Informatie over het product gaat hier"
 					label="Productinformatie"
+					preserveWhiteSpace={ false }
 					value={ props.attributes.content }
 					onChange={ (value) => updateContent(value) }
 					/>
