@@ -282,7 +282,7 @@
          object-fit: cover;
       width: 22.75%;
       height: 130px;
-      border: solid 1px #4e4e4e; }
+      border: solid 1px #999999; }
     .veldhuizen__container--product-grid .product-grid-wrapper img:hover {
       opacity: 0.6; }
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures {
@@ -346,6 +346,11 @@
     line-height: 26px;
     font-size: 17px;
     color: grey; }
+    .veldhuizen__container--product-info p :before {
+      position: initial;
+      border: none; }
+    .veldhuizen__container--product-info p strong {
+      color: green; }
   .veldhuizen__container--product-info button {
     width: 200px;
     background-color: #ff5400;

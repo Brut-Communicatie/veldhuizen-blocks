@@ -28,6 +28,13 @@
                 line-height: 26px;
                 font-size: 17px;
                 color: grey;
+                :before {
+                    position: initial;
+                    border: none;
+                }
+                strong {
+                    color: green;
+                }
             }
 
             button {

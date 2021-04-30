@@ -1,7 +1,13 @@
-.veldhuizen{
-    &__product-information{
-        display: block;
-        padding: 10px;
-        background-color: rgb(224, 224, 224);
-    }
+.veldhuizen {
+	&__product-information {
+		display: block;
+		padding: 10px;
+		background-color: rgb(224, 224, 224);
+
+
+		.wrapper-richtext {
+			background-color: white;
+            padding: 2rem;
+		}
+	}
 }

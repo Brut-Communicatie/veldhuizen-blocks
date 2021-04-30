@@ -12,6 +12,7 @@ import './style.scss';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 import { TextControl, TextareaControl } from '@wordpress/components';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * Register: aa Gutenberg Block.
@@ -80,18 +81,27 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 		// RETURN TO BACKEND
 		return (
 			<div className="veldhuizen__product-information">
-				<TextareaControl 
+				{/* <TextareaControl 
 					label="Productinformatie"
 					value={ props.attributes.content }
 					onChange={ (value) => updateContent(value) }
-				/>
+				/> */}
+				<div className="wrapper-richtext">
+					<RichText
+					placeholder="Taart"
+					label="Productinformatie"
+					value={ props.attributes.content }
+					onChange={ (value) => updateContent(value) }
+					/>
+				</div>
+				
 			</div>
 		)
 	},
 
 	/**
 	 * The save function defines the way in which the different attributes should be combined
-	 * into the final markup, which is then serialized by Gutenberg into post_content.
+	 * i nto the final markup, which is then serialized by Gutenberg into post_content.
 	 *
 	 * The "save" property must be specified and must be a valid function.
 	 *

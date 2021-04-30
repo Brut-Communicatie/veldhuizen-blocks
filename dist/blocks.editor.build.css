@@ -143,6 +143,9 @@
   display: block;
   padding: 10px;
   background-color: #e0e0e0; }
+  .veldhuizen__product-information .wrapper-richtext {
+    background-color: white;
+    padding: 2rem; }
 /**
  * #.# Common SCSS
  *
