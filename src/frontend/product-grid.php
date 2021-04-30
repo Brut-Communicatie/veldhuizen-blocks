@@ -21,7 +21,7 @@ function veldhuizen_product_grid($attributes){
 
         echo '<div id="myModal" class="modal">';
             echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
-            echo '<a class="prev" onclick="nextSlide(-1)">&#10094;</a> <a class="next" onclick="nextSlide(1)">&#10095;</a>';
+            echo '<a class="prev" onclick="previousSlide(-1)">&#10094;</a> <a class="next" onclick="nextSlide(1)">&#10095;</a>';
             echo '<img id="modal-image" src="">';
         echo '</div>';
 
