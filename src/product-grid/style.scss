@@ -6,7 +6,7 @@
 			margin: 0 auto;
 			background-color: white;
 			padding-left: 2rem;
-			box-shadow: 2px 0 0  rgb(107, 107, 107);
+			box-shadow: 2px 0 0 rgb(107, 107, 107);
 
 			h1 {
 				font-size: 2.5em;
@@ -14,14 +14,81 @@
 				padding-top: 1rem;
 			}
 
+			// MODAL STYLING
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 5;
+				padding-top: 100px;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0, 0, 0, 0.555);
+
+				img {
+					position: relative;
+					left: 10%;
+					width: 80%;
+					margin: 0 auto;
+				}
+			}
+
+			.close {
+				color: white;
+				position: absolute;
+				top: 20px;
+				right: 25px;
+				font-size: 35px;
+				font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+				color: #999;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.prev,
+			.next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				padding: 16px;
+				margin-top: -50px;
+				color: white;
+				font-weight: bold;
+				font-size: 20px;
+				transition: 0.6s ease;
+				border-radius: 0 3px 3px 0;
+				user-select: none;
+				-webkit-user-select: none;
+			}
+
+			/* Position the "next button" to the right */
+			.next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+
+			/* On hover, add a black background color with a little bit see-through */
+			.prev:hover,
+			.next:hover {
+				background-color: rgba(0, 0, 0, 0.8);
+			}
+
+			// GALLERY STYLING
 			.product-grid-wrapper {
-                width: 50%;
+				width: 50%;
 
 				#big-image {
 					width: 100%;
 					height: auto;
 					display: block;
-                    margin-top: 1rem;
+					margin-top: 1rem;
 					opacity: 1;
 				}
 
@@ -36,14 +103,14 @@
 					opacity: 0.6;
 				}
 
-				.gallery-pictures+.gallery-pictures {
-					margin-left: 1.3333333%;
-                    margin-top: 1em;
-				}
+				// .gallery-pictures+.gallery-pictures {
+				// 	margin-left: 1.3333333%;
+				// 	margin-top: 1em;
+				// }
 
-				.gallery-pictures:nth-of-type(6) {
-					margin-left: 0px;
-				}
+				// .gallery-pictures:nth-of-type(3) {
+				// 	margin-left: 0px;
+				// }
 
 			}
 		}
