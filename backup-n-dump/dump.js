@@ -1,46 +1,100 @@
-const nextSlide = (x) => {
-	const modalImage = document.getElementById("modal-image")
-	productImages = document.getElementsByClassName('gallery-pictures')
+// jQuery code for adding table to product description
 
-	// HIER ZOEKEN NAAR POSITIE VAN openImage IN productImages
-
-	// gives array where each object has its position as the first item in the array
-	// then there's the 2nd array with all the values of the html element
-	productImages = Object.entries(productImages)
-	console.log(productImages)
-	// console.log(productImages)
-	const index = productImages.map(e => e.complete).indexOf(true)
-	console.log(index)
-
-	n += x
-	modalImage.src = productImages[n].currentSrc
-
-}
-
-// DOES NOT WORK
-if (n == 0) {
-	n = (index) + x
-	modalImage.src = productImages[n].currentSrc
-} else if (n > ((productImages.length) - 2)) {
-	console.log("Nu breekt het")
-	n = -1
-} else if (n < (productImages.length - 1) && n >= -1) {
-	n++
-	modalImage.src = productImages[n].currentSrc
-	console.log("waarde n: " + n)
-	console.log(productImages.length - 1)
-}
-
-// DOES WORK
-if (n == -1) {
-	n = (index) + x
-	console.log(n)
-	modalImage.src = productImages[n].currentSrc
-} else if (n >= 0 && n <= (productImages.length - 2)) {
-	n += x
-	modalImage.src = productImages[n].currentSrc
-} else {
-	n = 0
-	modalImage.src = productImages[n].currentSrc
-
-}
+(function($){
+	"use strict";
+$('.product-beschrijving2').each(function() {
+});
+$('.product-beschrijving5').each(function() {
+	 $('.product-beschrijving5 p').after('closeDiv');
+	 $('.product-beschrijving5 p').before ('openDiv');
+	  var text = $(this).html();
+   $(this).html(text.replace(/openDiv/g, '<div class="productText">'));
+    var text = $(this).html();
+   $(this).html(text.replace(/closeDiv/g, '</div><p class="separator">&nbsp;</p>'));
+      var text = $(this).html();
+   $(this).html(text.replace(/¬/g, ''));
+	  var text = $(this).html();
+   $(this).html(text.replace(/Meerprijs voor:/g, '<div class="meerprijs"><b>Meerprijs voor:</b>'));
+     var text = $(this).html();
+   $(this).html(text.replace(/Meerprijzen:/g, '<div class="meerprijs"><b>Meerprijzen:</b>'));
+   var text = $(this).html();
+   $(this).html(text.replace(/Minderprijs voor:/g, '<div class="meerprijs"><b>Minderprijs voor:</b>'));
+   var text = $(this).html();
+   $(this).html(text.replace(/Minderprijzen:/g, '<div class="meerprijs"><b>Minderprijzen:</b>'));
+   var text = $(this).html();
+   $(this).html(text.replace(/Minderprijs:/g, '<div class="meerprijs"><b>Minderprijs:</b>'));
+});
+$('.meerprijs').each(function() {
+   var text = $(this).html();
+   $(this).html(text.replace(/–/g, '<table width="100%" cellpadding="0" cellspacing="0" border="0" class="new-line2"><tr><td class="seperate-tab">-</td><td class="text-tab">'));
+   var text = $(this).html();
+   $(this).html(text.replace(/€/g, '</td><td class="euro-tab">'));
+    var text = $(this).html();
+   $(this).html(text.replace(/,=/g, ',=</td></tr></table><br>'));
+	 var text = $(this).html();
+	$(this).html(text.replace(/nvt/g, 'nvt</td></tr></table><br>'));
+	var text = $(this).html();
+ $(this).html(text.replace(/n.v.t./g, 'nvt</td></tr></table><br>'));
+     var text = $(this).html();
+   $(this).html(text.replace(/\/stuk/g, ''));
+   var text = $(this).html();
+   $(this).html(text.replace(/<br>/g, ''));
+//    $('.meerprijs .new-line2:last-of-type').after('close');
+   var text = $(this).html();
+   $(this).html(text.replace(/close/g, '</div>'));
+});
+$('.product-beschrijving5 .productText').each(function() {
+   var text = $(this).html();
+   $(this).html(text.replace(/€/g, '<span><b>'));
+    var text = $(this).html();
+   $(this).html(text.replace(/,=/g, ',=</b></span>'));
+    var text = $(this).html();
+   $(this).html(text.replace(/–/g, '<table width="100%" cellpadding="0" cellspacing="0" border="0" class="new-line"><tr><td class="seperate-tab">-</td><td class="line-tab">'));
+	 $(this).html(text.replace(/<br>/g, '</td></tr></table><br>'));
+      var text = $(this).html();
+   $(this).html(text.replace(/afsluiten voor <span><b>/g, 'afsluiten voor <b>'));
+});
+/*
+$('.product-disclaimer-print').each(function() {
+   var text = $(this).html();
+   $(this).html(text.replace(/www.veldhuizen.nl/g, 'www.veldhuizen.nl'));
+   var text = $(this).html();
+   $(this).html(text.replace(/[prijs_disclaimer_print]/g, 'Geldig vanaf maart 2017 tot 1 februari 2018'));
+   $(this).html(text.replace(/oktober 2016/g, 'maart 2017 tot 1 februari 2018'));
+});
+*/
+$('.product-disclaimer').each(function() {
+   var text = $(this).html();
+   $(this).html(text.replace(")</div>", ')<span class="product-disclaimer-print"><br>Voor actuele prijzen: http://www.veldhuizen.nl of bel naar: 088 6259600</span></div>'));
+});
+	$('.inscription-checkbox input[type="checkbox"]').on('click', function () {
+        $('.inscription-text').slideToggle();
+});
+jQuery('.inner-entry').click(function(){
+});
+	jQuery('#onderhoudsgegevens .av-masonry-container a').attr('target', '_blank');
+// Mega Menu Nav
+$(".twelve .menu-item").hover(
+  function () {
+	$(this).find('.sub-menu').addClass('contentHover');
+	$('.contentHover li:first-child a').addClass('menu-fx');
+},
+function () {
+ $(this).find('.sub-menu').removeClass('contentHover');
+ $('.contentHover li:first-child a').removeClass('menu-fx');
+	}
+);
+// Aanbod
+$(".av-masonry-entry").hover(
+  function () {
+	$(this).find('.av-inner-masonry-content').addClass('orangeBackground');
+	$(this).find('.avia-arrow').addClass('orangeBackground');
+	$(this).find('.av-masonry-entry-title').addClass('colorWhite');
+},
+function () {
+$(this).find('.av-inner-masonry-content').removeClass('orangeBackground');
+$(this).find('.avia-arrow').removeClass('orangeBackground');
+$(this).find('.av-masonry-entry-title').removeClass('colorWhite');
+	}
+);
+}(jQuery));
