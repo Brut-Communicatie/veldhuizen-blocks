@@ -73,8 +73,53 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-
 		// FUNCTIONS
+		const getTitle = () => {
+			if (! props.attributes.title ) {
+				const pTitle = document.getElementById('post-title-0').innerHTML
+				console.log(pTitle)
+				props.setAttributes({
+					title: pTitle
+				})
+			}
+		}
+
+		const pushImages = (id) => {
+			props.setAttributes({
+				imgArray: id.map( (id) => {
+					return {
+						imgID: id,
+						imgURL: baseUrl + id
+					}
+				})
+			})
+		}
+		
+		const getImagesId = () => {
+			// EVERYDAY WE STRAY FURTHER FROM GOD
+			const imgDataStr = (document.getElementsByTagName("P").item(2).innerText.split("[av_gallery ids='").pop()).replace("' style='big_thumb' preview_size='no scaling' crop_big_preview_thumbnail='avia-gallery-big-crop-thumb' thumb_size='portfolio' columns='5' imagelink='lightbox' lazyload='avia_lazyload' custom_class='product-gallerij']", "")
+			const imgDataArr = imgDataStr.split(",")
+			// console.log(imgDataArr)
+			const baseUrl = "https://veldhuizen.nl/?attachment_id="
+			props.setAttributes({
+				imgArray: imgDataArr.map( (id) => {
+					return {
+						imgID: id,
+						imgURL: baseUrl + id
+					}
+				})
+			})
+			// imgDataArr.forEach(id => console.log(baseUrl + id))
+			// imgDataArr.forEach(id =>
+			// 	props.setAttributes({
+			// 		imgArray: {
+			// 			imgID: id.id,
+			// 			imgURL: baseUrl + id.id
+			// 		}
+			// 	}))
+			console.log(props.attributes.imgArray)
+		}
+		
 		const onFileSelect = ( img ) => {
 			props.setAttributes({ 
 					imgArray: img.map( ( img ) => { 
@@ -87,7 +132,7 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 			});
 		}
 
-		const onRemoveImg = ( ) => {
+		const onRemoveImg = () => {
 			props.setAttributes({
 				imgArray: null
 			});
@@ -100,11 +145,12 @@ import { TextControl, TextareaControl } from '@wordpress/components';
         }
 
 		const imgList = props.attributes.imgArray;
-
+		window.addEventListener('load', getTitle, false)
+		window.addEventListener('load', getImagesId, false)
 
 		// RETURN TO BACKEND
 		return (
-			<div className="veldhuizen__gallery">
+			<div className="veldhuizen__gallery" id="tiddy">
 				<TextControl 
                     label="Heading"
                     value={ props.attributes.title }

@@ -13,6 +13,8 @@ const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 import { TextControl, TextareaControl } from '@wordpress/components';
 import { useBlockProps, RichText } from '@wordpress/block-editor';
+const { Component } = wp.element;
+
 
 /**
  * Register: aa Gutenberg Block.
@@ -71,21 +73,36 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
+		// FORGIVE ME FATHER, FOR I HAVE SINNED
+		const spacing = "<br> <br>"
+
+		const injectPInfo = () => {
+			if ( Object.keys(props.attributes).length === 0 ) {
+				const pInfo1 = document.getElementsByTagName("P").item(8).innerHTML.split(']<br>').pop()
+				const pInfo2 = document.getElementsByTagName("P").item(9).innerHTML
+				const pInfo3 = document.getElementsByTagName("P").item(10).innerHTML.replace('[/av_textblock]', '')
+				props.setAttributes({
+					content: pInfo1 + spacing + pInfo2 + spacing + pInfo3
+				})
+				console.log("no attributes")
+			} else {
+				console.log("attributes found, object has values: " + Object.keys(props.attributes).length)
+				console.log(props.attributes)
+			}
+		}
+		
 		// FUNCTIONS
         const updateContent = (value) => {
             props.setAttributes({
                 content: value,
             });
         }
+
+		window.addEventListener('load', injectPInfo, false)
 		
 		// RETURN TO BACKEND
 		return (
 			<div className="veldhuizen__product-information">
-				{/* <TextareaControl 
-					label="Productinformatie"
-					value={ props.attributes.content }
-					onChange={ (value) => updateContent(value) }
-				/> */}
 				<div className="wrapper-richtext">
 					<RichText
 					placeholder="Informatie over het product gaat hier"
