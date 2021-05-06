@@ -14,8 +14,6 @@ const { MediaUpload } = wp.blockEditor;
 const { Button } = wp.components;
 import { TextControl, TextareaControl } from '@wordpress/components';
 
-
-
 /**
  * Register: aa Gutenberg Block.
  *
@@ -99,8 +97,8 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 			// EVERYDAY WE STRAY FURTHER FROM GOD
 			const imgDataStr = (document.getElementsByTagName("P").item(2).innerText.split("[av_gallery ids='").pop()).replace("' style='big_thumb' preview_size='no scaling' crop_big_preview_thumbnail='avia-gallery-big-crop-thumb' thumb_size='portfolio' columns='5' imagelink='lightbox' lazyload='avia_lazyload' custom_class='product-gallerij']", "")
 			const imgDataArr = imgDataStr.split(",")
-			// console.log(imgDataArr)
 			const baseUrl = "https://veldhuizen.nl/?attachment_id="
+
 			props.setAttributes({
 				imgArray: imgDataArr.map( (id) => {
 					return {
@@ -109,15 +107,7 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 					}
 				})
 			})
-			// imgDataArr.forEach(id => console.log(baseUrl + id))
-			// imgDataArr.forEach(id =>
-			// 	props.setAttributes({
-			// 		imgArray: {
-			// 			imgID: id.id,
-			// 			imgURL: baseUrl + id.id
-			// 		}
-			// 	}))
-			console.log(props.attributes.imgArray)
+			// console.log(props.attributes.imgArray)
 		}
 		
 		const onFileSelect = ( img ) => {

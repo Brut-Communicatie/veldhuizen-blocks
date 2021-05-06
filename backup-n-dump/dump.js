@@ -1,5 +1,28 @@
-// jQuery code for adding table to product description
+const el = wp.element.createElement;
+const { registerBlockType } = wp.blocks;
+const { InnerBlocks } = wp.blockEditor;
+ 
+const BLOCKS_TEMPLATE = [
+    [ 'core/image', {} ],
+    [ 'core/paragraph', { placeholder: 'Image Details' } ],
+];
+ 
+registerBlockType( 'myplugin/template', {
+    title: 'My Template Block',
+    category: 'widgets',
+    edit: ( props ) => {
+        return el( InnerBlocks, {
+            template: BLOCKS_TEMPLATE,
+            templateLock: false,
+        } );
+    },
+    save: ( props ) => {
+        return el( InnerBlocks.Content, {} );
+    },
+} );
 
+
+// jQuery code for adding table to product description
 (function($){
 	"use strict";
 $('.product-beschrijving2').each(function() {
@@ -98,3 +121,6 @@ $(this).find('.av-masonry-entry-title').removeClass('colorWhite');
 	}
 );
 }(jQuery));
+
+// QUERY WP EXPORTER
+// 'post_type' => 'page', 'author' => 8

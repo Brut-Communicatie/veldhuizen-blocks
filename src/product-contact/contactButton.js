@@ -56,8 +56,6 @@ const { Button } = wp.components;
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-
-
 		// RETURN TO BACKEND
 		return (
 			<div className="veldhuizen__contact">
