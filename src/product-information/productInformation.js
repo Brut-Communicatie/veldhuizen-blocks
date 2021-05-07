@@ -129,6 +129,6 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-		return null;
+		return props.attributes;
 	},
 } );

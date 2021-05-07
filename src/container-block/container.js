@@ -11,6 +11,7 @@ import './style.scss';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const { InnerBlocks } = wp.editor;
+const {useSelect, dispatch, select} = wp.data;
 
 /**
  * Register: aa Gutenberg Block.
@@ -54,14 +55,12 @@ const { InnerBlocks } = wp.editor;
 	 */
 	edit: ( props ) => {
 		// READ FUNCTION FILES
-		
-
-
 
 		// RETURN TO BACKEND
 		return (
             <div className="veldhuizen__product-TESTTTTTTT">
 				<h1>Container / wrapper voor alle guten blocks</h1>
+				<h3>HEYHEY</h3>
 			</div>
 		)
 	},
