@@ -17,4 +17,5 @@ import './product/product.js';
 import './product-grid/grid.js';
 import './product-contact/contactButton.js';
 import './product-information/productInformation.js';
-import './product-footer/footer.js'
+import './product-footer/footer.js';
+import './container-block/container.js';

@@ -6,8 +6,7 @@ function veldhuizen_product_information($attributes) {
     $raw_content = $attributes['content'];
     $clean_content = nl2br($raw_content);
     $items = $attributes['products'];
-    // $query = new WP_Query( array( 'post_type' => 'producten' ) );
-    // $products = $query['posts'];
+
 
     ob_start();
 

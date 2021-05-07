@@ -288,7 +288,7 @@
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures {
       margin-right: 3%;
       margin-top: 1em; }
-    .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(5), .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(9) {
+    .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(4n+5) {
       margin-right: 0; }
 /**
  * #.# Common SCSS
@@ -330,11 +330,12 @@
       flex-direction: column;
   padding-left: 2rem;
   -webkit-box-shadow: 2px 0 0 #6b6b6b;
-          box-shadow: 2px 0 0 #6b6b6b; }
-  .veldhuizen__container--product-info :before {
+          box-shadow: 2px 0 0 #6b6b6b;
+  position: relative; }
+  .veldhuizen__container--product-info:before {
     content: "";
     position: absolute;
-    bottom: -550px;
+    top: 0;
     height: 1px;
     width: 850px;
     border-top: 1px solid #919191; }
@@ -398,3 +399,9 @@
   .veldhuizen__container--product-footer a:hover {
     color: white;
     text-decoration: underline; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/

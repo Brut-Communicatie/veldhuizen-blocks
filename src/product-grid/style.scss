@@ -112,7 +112,7 @@
 					margin-top: 1em;
 				}
 
-				.gallery-pictures:nth-of-type(5), .gallery-pictures:nth-of-type(9) {
+				.gallery-pictures:nth-of-type(4n+5) {
 					margin-right: 0;
 				}
 

@@ -8,11 +8,12 @@
             flex-direction: column;
             padding-left: 2rem;
             box-shadow: 2px 0 0 rgb(107, 107, 107);
+            position: relative;
 
-            :before {
+            &:before {
                 content: "";
                 position: absolute;
-                bottom: -550px;
+                top: 0;
                 height: 1px;
                 width: 850px;
                 border-top: 1px solid rgb(145, 145, 145);
