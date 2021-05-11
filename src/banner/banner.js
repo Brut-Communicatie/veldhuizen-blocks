@@ -59,10 +59,13 @@ registerBlockType( 'cgb/veldhuizen-banner', {
                 title: value,
             });
         }
+		const title = document.getElementById("post-title-0").innerHTML
+		props.attributes.title = title
+
 		return (
 			<div className="veldhuizen__banner">
                 <TextControl 
-                    label="Titel"
+                    label="Titel wordt automatisch geladen vanuit de title van de pagina"
                     value={ props.attributes.title }
                     onChange={ (value) => updateTitle(value) }
                 />

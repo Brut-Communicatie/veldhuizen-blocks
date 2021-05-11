@@ -198,13 +198,8 @@
 */
 .veldhuizen__container--product-grid {
   position: relative;
-  width: 1000px;
-  margin: 0 auto;
-  background-color: white;
   padding-left: 2rem;
   padding-right: 2rem;
-  -webkit-box-shadow: 2px 0 0 #6b6b6b;
-          box-shadow: 2px 0 0 #6b6b6b;
   /* Position the "next button" to the right */
   /* On hover, add a black background color with a little bit see-through */ }
   .veldhuizen__container--product-grid h1 {
@@ -297,15 +292,8 @@
  * that are used across the project.
 */
 .veldhuizen__container--product-contact {
-  width: 1000px;
-  margin: 0 auto;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
-  background-color: white;
-  -webkit-box-shadow: 2px 0 0 #6b6b6b;
-          box-shadow: 2px 0 0 #6b6b6b; }
+      flex-direction: column; }
   .veldhuizen__container--product-contact button {
     width: 250px;
     background-color: #ff5400;
@@ -321,16 +309,11 @@
  * that are used across the project.
 */
 .veldhuizen__container--product-info {
-  width: 1000px;
-  margin: 0 auto;
-  background-color: white;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
   padding-left: 2rem;
-  -webkit-box-shadow: 2px 0 0 #6b6b6b;
-          box-shadow: 2px 0 0 #6b6b6b;
   position: relative; }
   .veldhuizen__container--product-info:before {
     content: "";
@@ -374,12 +357,7 @@
  * that are used across the project.
 */
 .veldhuizen__container--product-footer {
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
   background-color: #0b9a71;
-  -webkit-box-shadow: 2px 0 0 #6b6b6b;
-          box-shadow: 2px 0 0 #6b6b6b;
   height: 50px;
   color: white; }
   .veldhuizen__container--product-footer a {
@@ -405,3 +383,9 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.veldhuizen__container--product-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  -webkit-box-shadow: 2px 2px 7px #6b6b6b;
+          box-shadow: 2px 2px 7px #6b6b6b; }

@@ -10,8 +10,7 @@ import './editor.scss';
 import './style.scss';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { InnerBlocks } = wp.editor;
-const {useSelect, dispatch, select} = wp.data;
+const { InnerBlocks } = wp.blockEditor;
 
 /**
  * Register: aa Gutenberg Block.
@@ -39,7 +38,6 @@ const {useSelect, dispatch, select} = wp.data;
 	],
 
 	attributes: {
-		title: 'string',
 	},
 
 	/**
@@ -54,14 +52,24 @@ const {useSelect, dispatch, select} = wp.data;
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-		// READ FUNCTION FILES
+		// DEFINE TEMPLATE
+		const PRODUCT_TEMPLATE = [
+			['cgb/veldhuizen-banner', {}],
+			['cgb/veldhuizen-product-grid', {}],
+			['cgb/veldhuizen-product-contact', {}],
+			['cgb/block-veldhuizen-product-information', {}],
+			['cgb/block-veldhuizen-product-footer', {}]
+		];
+
+		console.log("Dit is innerblocks: " + InnerBlocks.Content)
+
 
 		// RETURN TO BACKEND
 		return (
-            <div className="veldhuizen__product-TESTTTTTTT">
-				<h1>Container / wrapper voor alle guten blocks</h1>
-				<h3>HEYHEY</h3>
-			</div>
+			<InnerBlocks
+			template={ PRODUCT_TEMPLATE }
+			// templateLock="all"
+			/>
 		)
 	},
 
@@ -77,6 +85,8 @@ const {useSelect, dispatch, select} = wp.data;
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-        return null;
+        return (
+				<InnerBlocks.Content />
+		)
     },
 } );

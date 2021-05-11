@@ -72,43 +72,43 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 	 */
 	edit: ( props ) => {
 		// FUNCTIONS
-		const getTitle = () => {
-			if (! props.attributes.title ) {
-				const pTitle = document.getElementById('post-title-0').innerHTML
-				console.log(pTitle)
-				props.setAttributes({
-					title: pTitle
-				})
-			}
-		}
+		// const getTitle = () => {
+		// 	if (! props.attributes.title ) {
+		// 		const pTitle = document.getElementById('post-title-0').innerHTML
+		// 		console.log(pTitle)
+		// 		props.setAttributes({
+		// 			title: pTitle
+		// 		})
+		// 	}
+		// }
 
-		const pushImages = (id) => {
-			props.setAttributes({
-				imgArray: id.map( (id) => {
-					return {
-						imgID: id,
-						imgURL: baseUrl + id
-					}
-				})
-			})
-		}
+		// const pushImages = (id) => {
+		// 	props.setAttributes({
+		// 		imgArray: id.map( (id) => {
+		// 			return {
+		// 				imgID: id,
+		// 				imgURL: baseUrl + id
+		// 			}
+		// 		})
+		// 	})
+		// }
 		
-		const getImagesId = () => {
-			// EVERYDAY WE STRAY FURTHER FROM GOD
-			const imgDataStr = (document.getElementsByTagName("P").item(2).innerText.split("[av_gallery ids='").pop()).replace("' style='big_thumb' preview_size='no scaling' crop_big_preview_thumbnail='avia-gallery-big-crop-thumb' thumb_size='portfolio' columns='5' imagelink='lightbox' lazyload='avia_lazyload' custom_class='product-gallerij']", "")
-			const imgDataArr = imgDataStr.split(",")
-			const baseUrl = "https://veldhuizen.nl/?attachment_id="
+		// const getImagesId = () => {
+		// 	EVERYDAY WE STRAY FURTHER FROM GOD
+		// 	const imgDataStr = (document.getElementsByTagName("P").item(2).innerText.split("[av_gallery ids='").pop()).replace("' style='big_thumb' preview_size='no scaling' crop_big_preview_thumbnail='avia-gallery-big-crop-thumb' thumb_size='portfolio' columns='5' imagelink='lightbox' lazyload='avia_lazyload' custom_class='product-gallerij']", "")
+		// 	const imgDataArr = imgDataStr.split(",")
+		// 	const baseUrl = "https://veldhuizen.nl/?attachment_id="
 
-			props.setAttributes({
-				imgArray: imgDataArr.map( (id) => {
-					return {
-						imgID: id,
-						imgURL: baseUrl + id
-					}
-				})
-			})
-			// console.log(props.attributes.imgArray)
-		}
+		// 	props.setAttributes({
+		// 		imgArray: imgDataArr.map( (id) => {
+		// 			return {
+		// 				imgID: id,
+		// 				imgURL: baseUrl + id
+		// 			}
+		// 		})
+		// 	})
+		// 	console.log(props.attributes.imgArray)
+		// }
 		
 		const onFileSelect = ( img ) => {
 			props.setAttributes({ 
@@ -135,12 +135,12 @@ import { TextControl, TextareaControl } from '@wordpress/components';
         }
 
 		const imgList = props.attributes.imgArray;
-		window.addEventListener('load', getTitle, false)
-		window.addEventListener('load', getImagesId, false)
+		// window.addEventListener('load', getTitle, false)
+		// window.addEventListener('load', getImagesId, false)
 
 		// RETURN TO BACKEND
 		return (
-			<div className="veldhuizen__gallery" id="tiddy">
+			<div className="veldhuizen__gallery">
 				<TextControl 
                     label="Heading"
                     value={ props.attributes.title }

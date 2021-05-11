@@ -1,13 +1,11 @@
 .veldhuizen {
     &__container {
         &--product-info {
-            width: 1000px;
-            margin: 0 auto;
-            background-color: white;
+            // width: 1000px;
+            // margin: 0 auto;
             display: flex;
             flex-direction: column;
             padding-left: 2rem;
-            box-shadow: 2px 0 0 rgb(107, 107, 107);
             position: relative;
 
             &:before {
