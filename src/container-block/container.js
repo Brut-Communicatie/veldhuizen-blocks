@@ -54,7 +54,6 @@ const { InnerBlocks } = wp.blockEditor;
 	edit: ( props ) => {
 		// DEFINE TEMPLATE
 		const PRODUCT_TEMPLATE = [
-			['cgb/veldhuizen-banner', {}],
 			['cgb/veldhuizen-product-grid', {}],
 			['cgb/veldhuizen-product-contact', {}],
 			['cgb/block-veldhuizen-product-information', {}],
