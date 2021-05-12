@@ -110,7 +110,7 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 		// 	console.log(props.attributes.imgArray)
 		// }
 
-		if (props.attributes.title.length === 0) {
+		if (! props.attributes.title) {
 			console.log("Triggered title statement in gridblock")
 			const title = document.getElementById("post-title-0").innerHTML
 			updateTitle(title)
