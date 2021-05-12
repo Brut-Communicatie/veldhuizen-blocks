@@ -110,10 +110,12 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 		// 	console.log(props.attributes.imgArray)
 		// }
 
-	
-		const title = document.getElementById("post-title-0").innerHTML
-		props.attributes.title = title
-		
+		if (props.attributes.title.length === 0) {
+			console.log("Triggered title statement in gridblock")
+			const title = document.getElementById("post-title-0").innerHTML
+			updateTitle(title)
+		}
+
 		
 		const onFileSelect = ( img ) => {
 			props.setAttributes({ 
@@ -133,11 +135,11 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 			});
 		}
 		
-		// const updateTitle = (value) => {
-        //     props.setAttributes({
-        //         title: value,
-        //     });
-        // }
+		const updateTitle = (value) => {
+            props.setAttributes({
+                title: value,
+            });
+        }
 
 		const imgList = props.attributes.imgArray;
 		// window.addEventListener('load', getTitle, false)
