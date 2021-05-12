@@ -335,6 +335,10 @@
       border: none; }
     .veldhuizen__container--product-info p strong {
       color: green; }
+    .veldhuizen__container--product-info p var {
+      float: right;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      margin-right: 2rem; }
   .veldhuizen__container--product-info button {
     width: 200px;
     background-color: #ff5400;
