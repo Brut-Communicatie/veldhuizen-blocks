@@ -113,7 +113,7 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 		if (! props.attributes.title) {
 			console.log("Triggered title statement in gridblock")
 			const title = document.getElementById("post-title-0").innerHTML
-			updateTitle(title)
+			props.attributes.title = title
 		}
 
 		
