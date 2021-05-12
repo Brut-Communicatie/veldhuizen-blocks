@@ -109,6 +109,11 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 		// 	})
 		// 	console.log(props.attributes.imgArray)
 		// }
+
+		if ( ! props.attributes.title ) {
+			const title = document.getElementById("post-title-0").innerHTML
+			props.attributes.title = title
+		}
 		
 		const onFileSelect = ( img ) => {
 			props.setAttributes({ 
