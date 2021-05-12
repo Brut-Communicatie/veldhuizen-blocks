@@ -110,10 +110,10 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 		// 	console.log(props.attributes.imgArray)
 		// }
 
-		if ( ! props.attributes.title ) {
-			const title = document.getElementById("post-title-0").innerHTML
-			props.attributes.title = title
-		}
+	
+		const title = document.getElementById("post-title-0").innerHTML
+		props.attributes.title = title
+		
 		
 		const onFileSelect = ( img ) => {
 			props.setAttributes({ 
@@ -133,11 +133,11 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 			});
 		}
 		
-		const updateTitle = (value) => {
-            props.setAttributes({
-                title: value,
-            });
-        }
+		// const updateTitle = (value) => {
+        //     props.setAttributes({
+        //         title: value,
+        //     });
+        // }
 
 		const imgList = props.attributes.imgArray;
 		// window.addEventListener('load', getTitle, false)
