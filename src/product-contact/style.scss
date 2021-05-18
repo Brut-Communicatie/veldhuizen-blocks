@@ -1,24 +1,36 @@
 .veldhuizen {
 	&__container {
 		&--product-contact {
-            // width: 1000px;
-            // margin: 0 auto;
-            // display: flex;
-            // background-color: white;
             flex-direction: column;
-
-
+            margin: 1.2rem;
 
             button {
-                // position: relative;
-                width: 250px;
+                position: static;
+                width: 100%;
                 background-color: #ff5400;
                 color: white;
-                padding: 15px 35px;
-                margin: 1rem 0 1rem 2rem;
+                padding: 15px 20%;
+                -webkit-transition: box-shadow 0.3s ease-in-out;
+                -moz-transition: box-shadow 0.3s ease-in-out;
+                -o-transition: box-shadow 0.3s ease-in-out;
+                transition: box-shadow 0.3s ease-in-out;
+
+                @include sm {
+                    padding: 15px 30%;
+                }
+
+                @include tabletSmall {
+                    width: 250px;
+                    padding: 15px 45px;
+                }
+
                 i {
                     float: left;
                 }
+            }
+            button:hover {
+                text-decoration: underline;
+                box-shadow: 2px 2px 5px rgb(129, 129, 129);
             }
 		}
 	}

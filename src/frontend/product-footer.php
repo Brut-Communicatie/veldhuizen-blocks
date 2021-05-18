@@ -11,7 +11,7 @@ function veldhuizen_product_footer($attributes) {
 
     ob_start();
 
-    echo '<div class="veldhuizen__container--product-footer">';
+    echo '<div class="veldhuizen__container--product-footer no-print">';
     echo '<a className="footer-links">' . '<   ' . $items[rand(0, (count($items))-1)]['productTitle'] . '</a>';
     echo '<a className="footer-links">' . $items[rand(0, (count($items))-1)]['productTitle'] . '   >'. '</a>';
     echo '</div>';

@@ -67,7 +67,6 @@ const { InnerBlocks } = wp.blockEditor;
 		return (
 			<InnerBlocks
 			template={ PRODUCT_TEMPLATE }
-			// templateLock="all"
 			/>
 		)
 	},

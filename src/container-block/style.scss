@@ -1,10 +1,16 @@
 .veldhuizen {
 	&__container {
 		&--product-wrapper {
-			width: 1000px;
+			width: $containerWrapper;
 			margin: 0 auto;
 			background-color: white;
 			box-shadow: 2px 2px 7px rgb(107, 107, 107);
+			
+			@include Responsive($containerWrapper) {
+				width: calc(100% - 1rem);
+			}
+
+
 		}
 	}
 }

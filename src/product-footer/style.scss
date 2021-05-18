@@ -1,35 +1,43 @@
 .veldhuizen {
 	&__container {
 		&--product-footer {
-			// position: relative;
-			// width: 1000px;
-			// margin: 0 auto;
 			background-color: #0b9a71;
-			height: 50px;
-			color: white;
-			// height: 30px;
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			align-items: center;
+			padding: 10px 0;
 
 			a {
 				color: white;
-				position: relative;
-				top: 50%;
-				transform: translateY(-50%);
-                text-transform: none;
+				position: static;
+				font-size: 0.7em;
 			}
 
-			:first-child {
-                float: left;
-				margin-left: 2rem;
+			@include tabletSmall {
+				flex-direction: row;
+				justify-content: space-between;
+				height: 50px;
+
+				:first-child {
+					margin-left: 1.2rem;
+				}
+
+				:last-child {
+					margin-right: 1.2rem;
+				}
 			}
 
-			:last-child {
-				float: right;
-				margin-right: 2rem;
+			@include tablet {
+				a {
+					font-size: 1em;
+				}
 			}
 
 			a:hover {
-                color: white;
+				color: white;
 				text-decoration: underline;
+				cursor: pointer;
 			}
 		}
 	}
