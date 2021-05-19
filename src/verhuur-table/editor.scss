@@ -1,0 +1,17 @@
+.veldhuizen {
+    &__verhuur-table {
+        background-color: $gray;
+        padding: 25px;
+        min-height: 150px;
+
+        label {
+            font-size: 13px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+        #innerblocks-wrapper {
+            background-color: white;
+            padding: 2rem;
+        }
+    }
+}

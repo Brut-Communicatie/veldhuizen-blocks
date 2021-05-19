@@ -104,6 +104,22 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.veldhuizen__verhuur-table {
+  background-color: #dedede;
+  padding: 25px;
+  min-height: 150px; }
+  .veldhuizen__verhuur-table label {
+    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+  .veldhuizen__verhuur-table #innerblocks-wrapper {
+    background-color: white;
+    padding: 2rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
 .veldhuizen__gallery {
   width: 100%;
   background-color: #e7e7e7;
@@ -141,11 +157,17 @@
 */
 .veldhuizen__product-information {
   display: block;
-  padding: 10px;
+  padding: 25Px;
   background-color: #e0e0e0; }
   .veldhuizen__product-information .wrapper-richtext {
     background-color: white;
     padding: 2rem; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
 /**
  * #.# Common SCSS
  *

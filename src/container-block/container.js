@@ -60,9 +60,6 @@ const { InnerBlocks } = wp.blockEditor;
 			['cgb/block-veldhuizen-product-footer', {}]
 		];
 
-		console.log("Dit is innerblocks: " + InnerBlocks.Content)
-
-
 		// RETURN TO BACKEND
 		return (
 			<InnerBlocks
