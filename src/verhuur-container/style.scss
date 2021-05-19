@@ -1,0 +1,97 @@
+.veldhuizen__container--verhuur-wrapper {
+    // VANAF HIER KIJKEN HOE HET IN CSS WORDT GEPRINT
+    width: $containerWrapper;
+	margin: 0 auto;
+	background-color: white;
+	box-shadow: $box-shadow-color;
+	margin-top: 20px;
+
+	@include Responsive($containerWrapper) {
+		width: calc(100% - 1rem);
+	}
+
+	@include tablet {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.print-button-wrapper {
+		order: 2;
+	}
+	.wp-block-cgb-block-veldhuizen-verhuur-table {
+		padding-left: 1.2rem;
+		padding-right: 1.2rem;
+
+		@include tablet {
+			width: 40%;
+		}
+
+		p {
+			font-size: 0.8em;
+		}
+
+		table {
+			order: 1;
+			flex-grow: 1;
+			margin-top: 1.2rem;
+			font-size: 0.8em;
+			border-collapse: collapse;
+			position: relative;
+			width: 100%;
+
+            @include rwd {
+                    
+            }
+			tr {
+                
+				td {
+					padding: 10px;
+				}
+
+				&:nth-child(even) {
+					background-color: $gray;
+				}
+
+				td:last-child {
+					text-align: right;
+				}
+
+				td:first-child {
+					text-align: left;
+				}
+			}
+		}
+	}
+    .veldhuizen__container--product-grid {
+        order: 1;
+    
+        h1 {
+            display: none;
+        }
+    
+        @include tablet {
+            .product-grid-wrapper {
+                margin-top: 70px;
+                width: 550px;
+    
+                .gallery-pictures {
+                    width: 30%;
+                    height: 100px;
+                    margin-right: 5%;
+                    
+                    &:nth-of-type(3n+4) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .veldhuizen__container--product-footer {
+        order: 3;
+        margin-top: 1.2rem;
+        width: 100%;
+    }
+}

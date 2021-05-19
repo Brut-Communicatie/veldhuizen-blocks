@@ -55,8 +55,8 @@ const { InnerBlocks } = wp.blockEditor;
 		// DEFINE TEMPLATE
 		const VERHUUR_TEMPLATE = [
             ['cgb/block-veldhuizen-verhuur-table', {}],
-			// ['cgb/veldhuizen-product-grid', {}],
-			// ['cgb/block-veldhuizen-product-footer', {}]
+			['cgb/veldhuizen-product-grid', {}],
+			['cgb/block-veldhuizen-product-footer', {}]
 		];
 
 		// RETURN TO BACKEND
