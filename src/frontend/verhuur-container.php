@@ -8,4 +8,4 @@ function veldhuizen_verhuur_container_block($attributes, $content) {
     wp_enqueue_script( 'veldhuizen-verhuur-table', get_template_directory_uri() . '/js/verhuurTableBehavior.js', false, false );
 
     return ob_get_clean();
-},
+}
