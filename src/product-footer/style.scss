@@ -42,3 +42,11 @@
 		}
 	}
 }
+
+.footer-links, .footer-links:visited{
+	color: #fff;
+	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
+}

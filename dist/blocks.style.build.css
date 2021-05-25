@@ -502,6 +502,12 @@
     color: white;
     text-decoration: underline;
     cursor: pointer; }
+
+.footer-links, .footer-links:visited {
+  color: #fff;
+  text-decoration: none; }
+  .footer-links:hover, .footer-links:visited:hover {
+    text-decoration: underline; }
 /**
  * #.# Common SCSS
  *
