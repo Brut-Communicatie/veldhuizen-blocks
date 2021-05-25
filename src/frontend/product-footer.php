@@ -11,7 +11,6 @@ function veldhuizen_product_footer($attributes) {
 
     ob_start();
     global $post;
-    var_dump($post);
     $next = get_next_post();
     $prev = get_previous_post();
 
