@@ -2,8 +2,7 @@
 
 function veldhuizen_product_footer($attributes) {
     global $post;
-    global $errors;
-    var_dump($errors);
+
     $parent = get_post_parent($post->ID);
     $post_type = $post->post_type;
 
@@ -11,7 +10,6 @@ function veldhuizen_product_footer($attributes) {
         'posts_per_page' => -1,
         'order'          => 'ASC',
         'post_parent'    => $parent->ID,
-        'post_status'    => null,
         'post_type'      => $post_type,
     );
 
@@ -23,6 +21,7 @@ function veldhuizen_product_footer($attributes) {
     }
 
     $currentKey = array_search($post->ID, $siblingArray);
+
     $prevID = $siblingArray[$currentKey - 1] ? $siblingArray[$currentKey - 1] : $siblingArray[count($siblingArray) - 1];
     $nextID = $siblingArray[$currentKey + 1] ? $siblingArray[$currentKey + 1] : $siblingArray[0];
  
