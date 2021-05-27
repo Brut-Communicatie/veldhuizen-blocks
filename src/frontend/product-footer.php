@@ -3,10 +3,10 @@
 function veldhuizen_product_footer($attributes) {
   
 
-    global $post;
+    // global $post;
     global $wp_query;
     var_dump($wp_query);
-   
+    $post = $wp_query;
     $parent = get_post_parent($post->ID);
    
     $post_type = $post->post_type;
