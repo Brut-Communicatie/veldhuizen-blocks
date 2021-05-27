@@ -17,21 +17,19 @@ function veldhuizen_product_footer($attributes) {
 
     $siblingArray = [];
     $siblings = get_children($args);
-    var_dump($siblings);
+  
     foreach($siblings as $sibling){
         $siblingArray[] = $sibling->ID;
     }
 
     $currentKey = array_search($post->ID, $siblingArray);
-    var_dump($post, $parent, $siblingArray, $currentKey);
     $prevID = $siblingArray[$currentKey - 1] ? $siblingArray[$currentKey - 1] : $siblingArray[count($siblingArray) - 1];
     $nextID = $siblingArray[$currentKey + 1] ? $siblingArray[$currentKey + 1] : $siblingArray[0];
-
  
     ob_start();
     echo '<div class="veldhuizen__container--product-footer no-print">';
-    echo '<a class="footer-links" href="'. get_the_permalink( $prevID ) .'">' . '<   ' . "Vorige product". '</a>';
-    echo '<a class="footer-links" href="'. get_the_permalink( $nextID ) .'">' . "Volgende product" . '   >'. '</a>';
+    echo '<a class="footer-links" href="'. get_the_permalink( $prevID ) .'"><  Vorige product</a>';
+    echo '<a class="footer-links" href="'. get_the_permalink( $nextID ) .'">Volgende product  ></a>';
     echo '</div>';
     return ob_get_clean();
 }
