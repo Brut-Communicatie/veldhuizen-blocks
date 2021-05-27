@@ -9,14 +9,14 @@ function veldhuizen_product_footer($attributes) {
     ob_start();
 
     global $post;
-    var_dump($post);
     // $parent = get_post_parent($post->ID);
     $parent = $post->post_parent;
     $post_type = $post->post_type;
     $args = array(
         'posts_per_page' => -1,
         'order'          => 'ASC',
-        'post_parent'    => $parent->ID,
+        'post_parent'    => $parent,
+        'post_status' => null,
         'post_type'      => $post_type,
     );
 
