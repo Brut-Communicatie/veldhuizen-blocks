@@ -22,11 +22,11 @@ function veldhuizen_product_footer($attributes) {
     }
 
     $currentKey = array_search($post->ID, $siblingArray);
-
+    var_dump($post, $parent, $siblingArray, $currentKey);
     $prevID = $siblingArray[$currentKey - 1] ? $siblingArray[$currentKey - 1] : $siblingArray[count($siblingArray) - 1];
     $nextID = $siblingArray[$currentKey + 1] ? $siblingArray[$currentKey + 1] : $siblingArray[0];
 
-    var_dump($post, $parent, $siblingArray, $currentKey);
+ 
     ob_start();
     echo '<div class="veldhuizen__container--product-footer no-print">';
     echo '<a class="footer-links" href="'. get_the_permalink( $prevID ) .'">' . '<   ' . "Vorige product". '</a>';
