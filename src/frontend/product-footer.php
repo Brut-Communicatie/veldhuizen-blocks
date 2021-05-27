@@ -32,6 +32,7 @@ function veldhuizen_product_footer($attributes) {
     echo '<a class="footer-links" href="'. get_the_permalink( $prevID ) .'">' . '<   ' . "Vorige product". '</a>';
     echo '<a class="footer-links" href="'. get_the_permalink( $nextID ) .'">' . "Volgende product" . '   >'. '</a>';
     
+    echo '</div>';
     return ob_get_clean();
 }
 
