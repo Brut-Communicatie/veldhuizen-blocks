@@ -9,7 +9,7 @@ function veldhuizen_product_footer($attributes) {
     ob_start();
 
     global $post;
-   var_dump($post);
+    var_dump($post);
     $parent = get_post_parent($post->ID);
    
     $post_type = $post->post_type;
@@ -18,9 +18,8 @@ function veldhuizen_product_footer($attributes) {
         'posts_per_page' => -1,
         'order'          => 'ASC',
         'post_parent'    => $parent->ID,
-        'post_type'      => $post_type,
+        'post_type'      => 'verhuur',
     );
-
 
     $siblingArray = [];
     $siblings = get_children($args);
