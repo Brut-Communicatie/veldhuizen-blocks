@@ -17,7 +17,7 @@ function veldhuizen_product_footer($attributes) {
 
     $siblingArray = [];
     $siblings = get_children($args);
-
+    var_dump($siblings);
     foreach($siblings as $sibling){
         $siblingArray[] = $sibling->ID;
     }
