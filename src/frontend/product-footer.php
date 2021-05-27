@@ -2,7 +2,8 @@
 
 function veldhuizen_product_footer($attributes) {
     global $post;
-
+    global $errors;
+    var_dump($errors);
     $parent = get_post_parent($post->ID);
     $post_type = $post->post_type;
 
