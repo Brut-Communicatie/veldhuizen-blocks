@@ -6,6 +6,10 @@ function veldhuizen_product_footer($attributes) {
     $next = get_next_post();
     $prev = get_previous_post();
 
+    var_dump($next);
+    var_dump($post);
+    var_dump($prev);
+
     $nextLink = get_permalink( $next->ID );
     $prevLink = get_permalink( $prev->ID );
 

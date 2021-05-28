@@ -75,31 +75,6 @@ registerBlockType('cgb/block-veldhuizen-product-footer', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: (props) => {
-		// FUNCTIONS
-
-        // FETCH ALL PRODUCTS ON WORDPRESS SITE
-		const fetchProducts = () => {
-			if (!props.attributes.fetched) {
-				wp.apiFetch({
-					url: '/wp-json/wp/v2/producten?per_page=100'
-				}).then((res) => {
-					props.setAttributes({
-						fetched: true,
-					})
-					props.setAttributes({
-						products: res.map((res) => {
-							return {
-								productId: res.id,
-								productTitle: res.title['rendered'],
-								productUrl: res.link,
-							}
-						})
-					})
-				}).catch(err => {
-					throw err;
-				})
-			}
-		}
 
         // RESET FETCHED VALUE, SO FETCH FUNCTIONS GETS ALL PRODUCTS AGAIN
         window.onload = () => {
@@ -107,7 +82,6 @@ registerBlockType('cgb/block-veldhuizen-product-footer', {
                 fetched: false,
             })
         }
-
 
         console.log(props.attributes.fetched)
 		fetchProducts();
