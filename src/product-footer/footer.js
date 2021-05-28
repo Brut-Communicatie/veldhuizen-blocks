@@ -75,16 +75,7 @@ registerBlockType('cgb/block-veldhuizen-product-footer', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: (props) => {
-
-        // RESET FETCHED VALUE, SO FETCH FUNCTIONS GETS ALL PRODUCTS AGAIN
-        window.onload = () => {
-            props.setAttributes({
-                fetched: false,
-            })
-        }
-
-        console.log(props.attributes.fetched)
-		fetchProducts();
+		// FUNCTIONS
 
 		// RETURN TO BACKEND
 		return ( 
