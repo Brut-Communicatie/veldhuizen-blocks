@@ -11,3 +11,42 @@ $white: #f4f4f4;
 $gray: #dedede;
 $green: #bada55;
 $red: orangered;
+$box-shadow-color: rgba(0, 0, 0, 0.1) 0px 0px 17px 1px;
+
+// Spacings.
+$padding-products: 1.2rem;
+
+
+// Breakpoints.
+$containerWidth: 1440px;
+$tabletBreakpoint: 1024px;
+$containerWrapper: 1000px;
+$tabletSmallBreakpoint: 740px;
+$mobileBreakpoint: 500px;
+
+@mixin Responsive($breakpoint){
+	@media screen and (max-width: calc(#{$breakpoint} + 5px)) {
+		@content;
+	}
+}
+@mixin sm {
+	@media (min-width: $mobileBreakpoint) {
+		@content;
+	}
+}
+@mixin tabletSmall {
+	@media (min-width: $tabletSmallBreakpoint) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: $tabletBreakpoint) {
+		@content;
+	}
+}
+@mixin rwd {
+	@media (min-width: $containerWidth) {
+		@content;
+	}
+}
+

@@ -1,21 +1,41 @@
-.top{
-    &__banner{
-        background-color: #0b9a71;
-        width: 100%;
-        padding: 2rem 0;
-        display: flex;
-        justify-content: center;
-    }
-    &__content{
-        display: grid;
-        place-items: center;
+.top {
+	&__banner {
+		background-color: #0b9a71;
+		width: 100%;
+		padding: 1rem 0;
+		display: flex;
+		justify-content: center;
+	}
 
-        h1{
-            margin: 0;
-            padding: 15px;
-            color: #fff;
-            border: 2px solid #fff;
-            text-transform: uppercase;
+	&__content {
+		display: grid;
+		place-items: center;
+
+		h1 {
+			font-size: 0.7em;
+			margin: 0;
+			padding: 15px;
+			color: #fff;
+			border: 2px solid #fff;
+			text-transform: uppercase;
+		}
+
+        @include sm {
+            h1 {
+                font-size: 1em;
+            }
         }
-    }
+
+        @include tabletSmall {
+            h1 {
+                font-size: 1.3em;
+            }
+        }
+
+        @include tablet {
+            h1 {
+                font-size: 1.5em;
+            }
+        }
+	}
 }

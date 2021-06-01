@@ -9,9 +9,17 @@
 import './editor.scss';
 import './style.scss';
 
-const { __ } = wp.i18n; // Import __() from wp.i18n
-const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-import { TextControl, TextareaControl } from '@wordpress/components';
+const {
+	__
+} = wp.i18n; // Import __() from wp.i18n
+const {
+	registerBlockType
+} = wp.blocks; // Import registerBlockType() from wp.blocks
+import {
+	TextControl,
+	TextareaControl
+} from '@wordpress/components';
+
 /**
  * Register: aa Gutenberg Block.
  *
@@ -25,21 +33,35 @@ import { TextControl, TextareaControl } from '@wordpress/components';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'cgb/veldhuizen-banner', {
+registerBlockType('cgb/block-veldhuizen-product-footer', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Banner' ), // Block title.
+	title: __('Veldhuizen Product Footer'), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'Veldhuizen' ),
-		__( 'Banner' ),
-		__( 'Veldhuizen Banner' ),
+		__('Veldhuizen'),
+		__('Product footer'),
+		__('Footer'),
 	],
 
 	attributes: {
-        title: {
-            type: 'string',
-        },
+		fetched: {
+			type: 'boolean',
+			default: false,
+		},
+		products: {
+			type: 'array',
+
+			productTitle: {
+				type: 'string',
+			},
+			productUrl: {
+				type: 'string',
+			},
+			productId: {
+				type: 'number',
+			},
+		},
 	},
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -52,24 +74,14 @@ registerBlockType( 'cgb/veldhuizen-banner', {
 	 * @param {Object} props Props.
 	 * @returns {Mixed} JSX Component.
 	 */
-	edit: ( props ) => {
+	edit: (props) => {
+		// FUNCTIONS
 
-        const updateTitle = (value) => {
-            props.setAttributes({
-                title: value,
-            });
-        }
-		const title = document.getElementById("post-title-0").innerHTML
-		props.attributes.title = title
-
-		return (
-			<div className="veldhuizen__banner">
-                <TextControl 
-                    label="Titel wordt automatisch geladen vanuit de title van de pagina"
-                    value={ props.attributes.title }
-                    onChange={ (value) => updateTitle(value) }
-                />
-			</div>
+		// RETURN TO BACKEND
+		return ( 
+            <div className = "veldhuizen__product-footer">
+			<h4> Footer </h4> 
+            </div>
 		)
 	},
 
@@ -84,7 +96,7 @@ registerBlockType( 'cgb/veldhuizen-banner', {
 	 * @param {Object} props Props.
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
-	save: ( props ) => {
+	save: (props) => {
 		return null;
 	},
-} );
+});

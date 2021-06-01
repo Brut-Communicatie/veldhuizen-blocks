@@ -1,5 +1,5 @@
-/**
- * BLOCK: veldhuizen-nav
+ /**
+ * BLOCK: veldhuizen-imagegrid
  *
  * Registering a basic block with Gutenberg.
  * Simple block, renders and saves the same content without any interactivity.
@@ -8,10 +8,10 @@
 //  Import CSS.
 import './editor.scss';
 import './style.scss';
-
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-import { TextControl, TextareaControl } from '@wordpress/components';
+const { InnerBlocks, useBlockProps } = wp.blockEditor;
+
 /**
  * Register: aa Gutenberg Block.
  *
@@ -25,22 +25,24 @@ import { TextControl, TextareaControl } from '@wordpress/components';
  * @return {?WPBlock}          The block, if it has been successfully
  *                             registered; otherwise `undefined`.
  */
-registerBlockType( 'cgb/veldhuizen-banner', {
+
+ registerBlockType( 'cgb/block-veldhuizen-verhuur-table', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Banner' ), // Block title.
+	title: __( 'Veldhuizen Verhuur Table' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Banner' ),
-		__( 'Veldhuizen Banner' ),
+		__( 'Verhuur Table' ),
+		__( 'Table' ),
 	],
 
 	attributes: {
-        title: {
+        content: {
             type: 'string',
         },
 	},
+
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
 	 * This represents what the editor will render when the block is used.
@@ -53,23 +55,16 @@ registerBlockType( 'cgb/veldhuizen-banner', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
+        const blockProps = useBlockProps()
 
-        const updateTitle = (value) => {
-            props.setAttributes({
-                title: value,
-            });
-        }
-		const title = document.getElementById("post-title-0").innerHTML
-		props.attributes.title = title
-
+		// RETURN TO BACKEND
 		return (
-			<div className="veldhuizen__banner">
-                <TextControl 
-                    label="Titel wordt automatisch geladen vanuit de title van de pagina"
-                    value={ props.attributes.title }
-                    onChange={ (value) => updateTitle(value) }
-                />
-			</div>
+            <div class="veldhuizen__verhuur-table" >
+                <label>Hier komt de tabel met gegevens over het verhuur product te staan</label>
+                <div id="innerblocks-wrapper" { ...blockProps }>
+                    <InnerBlocks />
+                </div>
+            </div>
 		)
 	},
 
@@ -85,6 +80,12 @@ registerBlockType( 'cgb/veldhuizen-banner', {
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-		return null;
-	},
+        const blockProps = useBlockProps.save()
+        return (
+            <div { ...blockProps }>
+                <InnerBlocks.Content />
+            </div>
+            
+        )
+    },
 } );

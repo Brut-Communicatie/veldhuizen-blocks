@@ -145,6 +145,91 @@ function veldhuizen_nav_cgb_block_assets() { // phpcs:ignore
 			'render_callback' => 'veldhuizen_product',
 		)
 	);
+
+	register_block_type(
+		'cgb/veldhuizen-product-grid', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_product_grid',
+		)
+	);
+
+
+	register_block_type(
+		'cgb/veldhuizen-product-contact', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_product_contact',
+		)
+	);
+
+	register_block_type(
+		'cgb/block-veldhuizen-product-information', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_product_information',
+		)
+	);
+
+	register_block_type(
+		'cgb/block-veldhuizen-product-footer', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_product_footer',
+		)
+	);
+
+	register_block_type(
+		'cgb/block-veldhuizen-container-block', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_container_block',
+		)
+	);
+
+	register_block_type(
+		'cgb/block-veldhuizen-verhuur-table', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_verhuur_table',
+		)
+	);
+
+	register_block_type(
+		'cgb/block-veldhuizen-verhuur-container', array(
+			// Enqueue blocks.style.build.css on both frontend & backend.
+			'style'         => 'veldhuizen_nav-cgb-style-css',
+			// Enqueue blocks.build.js in the editor only.
+			'editor_script' => 'veldhuizen_nav-cgb-block-js',
+			// Enqueue blocks.editor.build.css in the editor only.
+			'editor_style'  => 'veldhuizen_nav-cgb-block-editor-css',
+			'render_callback' => 'veldhuizen_verhuur_container_block',
+		)
+	);
 }
 
 include 'frontend/nav-block.php';
@@ -153,6 +238,13 @@ include 'frontend/intro.php';
 include 'frontend/banner.php';
 include 'frontend/slider.php';
 include 'frontend/product.php';
+include 'frontend/product-grid.php';
+include 'frontend/product-contact.php';
+include 'frontend/product-information.php';
+include 'frontend/product-footer.php';
+include 'frontend/container-block.php';
+include 'frontend/verhuur-table.php';
+include 'frontend/verhuur-container.php';
 
 // Hook: Block assets.
 add_action( 'init', 'veldhuizen_nav_cgb_block_assets' );
