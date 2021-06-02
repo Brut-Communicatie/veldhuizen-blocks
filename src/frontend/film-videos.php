@@ -13,7 +13,8 @@ function veldhuizen_film_videos($attributes){
 	
 	foreach ($cleanArray as &$url) {
 		echo '<div class="block" onclick="openIframe(event)">';
-        echo '<img class="youtubeThumb" src="https://img.youtube.com/vi/' . $url . '/0.jpg">';
+		// echo $url;
+        echo '<img class="youtubeThumb" id="' . $url . '" src="https://img.youtube.com/vi/' . $url . '/0.jpg">';
         echo '<div class="block__info">';
         echo '<div class="block__square"></div>';
         echo '<h5>';
