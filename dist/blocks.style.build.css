@@ -619,3 +619,62 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.film-container-wrapper #youtubeModal {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(41, 41, 41, 0.726);
+  /* Position the "next button" to the right */
+  /* On hover, add a black background color with a little bit see-through */ }
+  .film-container-wrapper #youtubeModal iframe {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    height: 80%;
+    margin: 0 auto;
+    -webkit-box-shadow: 3px 3px 10px #2c2c2c;
+            box-shadow: 3px 3px 10px #2c2c2c; }
+  .film-container-wrapper #youtubeModal .close {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold; }
+  .film-container-wrapper #youtubeModal .close:hover,
+  .film-container-wrapper #youtubeModal .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer; }
+  .film-container-wrapper #youtubeModal .prev,
+  .film-container-wrapper #youtubeModal .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    -webkit-transition: 0.6s ease;
+    -o-transition: 0.6s ease;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+    -webkit-user-select: none;
+    z-index: 5; }
+  .film-container-wrapper #youtubeModal .next {
+    right: 0;
+    border-radius: 3px 0 0 3px; }
+  .film-container-wrapper #youtubeModal .prev:hover,
+  .film-container-wrapper #youtubeModal .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); }

@@ -40,9 +40,12 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 	],
 
 	attributes: {
-        videos: {
-            type: 'string',
-        }
+			title: {
+				type: 'string'
+			},
+			url: {
+				type: 'string'
+			}
 	},
 
 	/**
@@ -58,20 +61,35 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 	 */
 	edit: ( props ) => {
 		// DEFINE TEMPLATE
-		const updateContent = (value) => {
+		const updateUrl = (value) => {
             props.setAttributes({
-                videos: value,
+				url: value
             });
         }
+
+		const updateTitle = (value) => {
+            props.setAttributes({
+				title: value
+            });
+        }
+
+		console.log(props.attributes)
 
 		// RETURN TO BACKEND
 		return (
 		<div class="veldhuizen__youtube">
-			<TextareaControl
-				placeholder="Plak hier alle links van de youtube videos die je op de film pagina wil laten zien"
-				label="Youtube videos"
-				value={ props.attributes.videos }
-				onChange={ (value) => updateContent(value) }
+			<TextControl
+				placeholder="Plak hier de titel van de YouTube video"
+				label="Youtube video title"
+				value={ props.attributes.title }
+				onChange={ (value) => updateTitle(value) }
+			/>
+
+			<TextControl
+				placeholder="Plak hier de link van een YouTube video die je wil laten zien"
+				label="Youtube video url"
+				value={ props.attributes.url }
+				onChange={ (value) => updateUrl(value) }
 			/>
 		</div>
 		)
