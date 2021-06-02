@@ -613,3 +613,9 @@
         order: 3;
     margin-top: 1.2rem;
     width: 100%; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
