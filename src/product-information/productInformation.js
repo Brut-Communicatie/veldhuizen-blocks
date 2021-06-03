@@ -112,7 +112,6 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 					onChange={ (value) => updateContent(value) }
 					/>
 				</div>
-				
 			</div>
 		)
 	},

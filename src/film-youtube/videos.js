@@ -10,9 +10,9 @@ import './editor.scss';
 import './style.scss';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { MediaUpload } = wp.blockEditor;
-const { Button } = wp.components;
+const { InnerBlocks } = wp.blockEditor;
 import { TextControl, TextareaControl } from '@wordpress/components';
+
 
 /**
  * Register: aa Gutenberg Block.
@@ -28,35 +28,24 @@ import { TextControl, TextareaControl } from '@wordpress/components';
  *                             registered; otherwise `undefined`.
  */
 
- registerBlockType( 'cgb/veldhuizen-product-grid', {
+ registerBlockType( 'cgb/block-veldhuizen-film-videos', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Product Grid' ), // Block title.
+	title: __( 'Veldhuizen film videos' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Product grid' ),
-		__( 'Product' ),
+		__( 'Verhuur Film Videos' ),
+		__( 'Verhuur Film' ),
 	],
 
 	attributes: {
-		title: {
-			type: 'string',
-		},
-		imgArray: {
-			type: 'array',
-	
-			imgURL: {
-				type: 'string',
+			title: {
+				type: 'string'
 			},
-			imgID: {
-				type: 'number',
-			},
-			imgAlt: {
-				type: 'string',
+			url: {
+				type: 'string'
 			}
-		},
-	
 	},
 
 	/**
@@ -71,74 +60,38 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
-		// FUNCTIONS
-		if (! props.attributes.title) {
-			console.log("Triggered title statement in gridblock")
-			const title = document.getElementById("post-title-0").innerHTML
-			props.attributes.title = title
-		}
-
-		
-		const onFileSelect = ( img ) => {
-			props.setAttributes({ 
-					imgArray: img.map( ( img ) => { 
-						return {
-							imgID: img.id,
-							imgURL: img.url,
-							imgAlt: img.alt	
-						}
-				})
-			});
-		}
-
-		const onRemoveImg = () => {
-			props.setAttributes({
-				imgArray: null
-			});
-		}
-		
-		const updateTitle = (value) => {
+		// DEFINE TEMPLATE
+		const updateUrl = (value) => {
             props.setAttributes({
-                title: value,
+				url: value
             });
         }
 
-		const imgList = props.attributes.imgArray;
-		// window.addEventListener('load', getTitle, false)
-		// window.addEventListener('load', getImagesId, false)
+		const updateTitle = (value) => {
+            props.setAttributes({
+				title: value
+            });
+        }
+
+		console.log(props.attributes)
 
 		// RETURN TO BACKEND
 		return (
-			<div className="veldhuizen__gallery">
-				<TextControl 
-                    label="Heading"
-                    value={ props.attributes.title }
-                    onChange={ (value) => updateTitle(value) }
-                />
-				{
-					(props.attributes.imgArray) ? (
-						<div className="img-upload-wrapper" >
-							
-							{
-								imgList.map((img)  => 
-									<img src={img.imgURL} alt={img.imgAlt} />
-								)
-							}
+		<div class="veldhuizen__youtube">
+			<TextControl
+				placeholder="Plak hier de titel van de YouTube video"
+				label="Youtube video title"
+				value={ props.attributes.title }
+				onChange={ (value) => updateTitle(value) }
+			/>
 
-							<Button className="remove-button"
-									onClick={onRemoveImg}
-							>Remove All Images</Button>
-						</div>
-					) : (
-						<MediaUpload 
-							onSelect={ onFileSelect } 
-							value={ props.attributes.imgID }
-							multiple={ true }
-							render={({open}) => <Button onClick={open} > Open Library </Button> } 
-						/>
-					)
-				}
-			</div>
+			<TextControl
+				placeholder="Plak hier de link van een YouTube video die je wil laten zien"
+				label="Youtube video url"
+				value={ props.attributes.url }
+				onChange={ (value) => updateUrl(value) }
+			/>
+		</div>
 		)
 	},
 
@@ -154,6 +107,6 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-        return null;
+        return props.attributes;
     },
 } );
