@@ -1,15 +1,4 @@
 .film-container-wrapper {
-    .block {
-        // object-fit: cover;
-        // overflow: hidden;
-        // background-size: cover;
-        // background-position: center center;
-
-        img {
-            // width: 500px;
-            // height: auto;
-        }
-    }
 
     #youtubeModal {
         display: none;
@@ -31,6 +20,16 @@
 			height: 80%;
 			margin: 0 auto;
 			box-shadow: 3px 3px 10px rgb(44, 44, 44);
+            
+            @include Responsive($tabletBreakpoint) {
+                position: absolute;
+                height: 50%;
+                width: 80%;
+                margin: 0; 
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            } 
         }
 
         .close {
@@ -53,10 +52,11 @@
         .next {
             cursor: pointer;
             position: absolute;
-            top: 50%;
             width: auto;
             padding: 16px;
-            margin-top: -50px;
+            margin: 0;
+            top: 50%;
+            transform: translateY(-50%);
             color: white;
             font-weight: bold;
             font-size: 20px;
