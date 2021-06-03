@@ -121,7 +121,7 @@
 						height: auto;
 						display: block;
 						margin-top: 1rem;
-						opacity: 1;
+						// opacity: 1;
 
 						@include Responsive($tabletBreakpoint) {
 							max-height: 450px;
@@ -132,40 +132,29 @@
 					}
 				}
 				
-
-				img {
-					object-fit: cover;
+				.gallery-pictures-wrapper {
+					display: inline-block;
 					width: 15%;
-					height: 100px;
-					// border: solid 1px rgb(153, 153, 153);
-					transition: .3s ease-in-out;
-
-					@include Responsive($tabletBreakpoint) {
-						height: 80px;
-					}
-
-					@include Responsive($tabletSmallBreakpoint) {
-						height: 70px;
-					}
-					@include Responsive($mobileBreakpoint) {
-						height: 50px;
-					}
-				}
-
-				img:hover {
-					transform: scale(1.1);
-                    box-shadow: 0px 0px 10px rgb(109, 109, 109);
-				}
-
-				.gallery-pictures {
 					margin-right: 2%;
 					margin-top: 1em;
+					
+					img {
+						transition: .1s ease-in-out;
+						
+					}
+					img:hover {
+						transform: scale(1.1);
+						image-rendering: -moz-crisp-edges;         /* Firefox */
+						image-rendering:   -o-crisp-edges;         /* Opera */
+						image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+						image-rendering: crisp-edges;
+					}
 				}
+				
 
-				.gallery-pictures:nth-of-type(6n+6) {
+				.gallery-pictures-wrapper:nth-of-type(6n+7) {
 					margin-right: 0;
 				}
-
 			}
 		}
 	}

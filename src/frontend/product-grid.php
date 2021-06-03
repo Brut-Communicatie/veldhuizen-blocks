@@ -15,7 +15,9 @@ function veldhuizen_product_grid($attributes){
             echo "<img id='big-image' src='" . $images[0]['imgURL'] . "'onclick='openModal(event)' />";
             echo '</div>';
             foreach ($images as $image) {
+                echo '<div class="gallery-pictures-wrapper">';
                 echo "<img src='" . $image['imgURL'] . "' class='gallery-pictures no-print' onmouseover='expandImage(this)' onclick='openModal(event)' />";
+                echo '</div>';
             }
 
         echo "</div>";
