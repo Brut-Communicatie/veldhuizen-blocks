@@ -30,13 +30,13 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 
  registerBlockType( 'cgb/veldhuizen-product-grid', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Product Grid' ), // Block title.
+	title: __( 'Veldhuizen Image Grid' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Product grid' ),
-		__( 'Product' ),
+		__( 'Image grid' ),
+		__( 'Grid' ),
 	],
 
 	attributes: {
