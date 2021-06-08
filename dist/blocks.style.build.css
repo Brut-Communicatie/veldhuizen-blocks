@@ -704,3 +704,12 @@
   .film-container-wrapper #youtubeModal .prev:hover,
   .film-container-wrapper #youtubeModal .next:hover {
     background-color: rgba(0, 0, 0, 0.8); }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.veldhuizen-rich-text-wrapper strong {
+  color: #0b9a71;
+  font-size: 1.3em; }

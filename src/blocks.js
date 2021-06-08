@@ -21,3 +21,4 @@ import './product-footer/footer.js';
 import './container-block/container.js';
 import './verhuur-container/verhuurContainer.js';
 import './film-youtube/videos.js';
+import './rich-text/rich-text.js';
