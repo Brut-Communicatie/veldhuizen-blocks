@@ -10,6 +10,12 @@
 		width: calc(100% - 1rem);
 	}
 
+	.veldhuizen__container--product-grid {
+		.print-button {
+			display: none;
+		}
+	}
+
 	@include tablet {
 		display: flex;
 		flex-direction: row;

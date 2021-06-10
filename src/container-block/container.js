@@ -55,7 +55,6 @@ const { InnerBlocks } = wp.blockEditor;
 		// DEFINE TEMPLATE
 		const PRODUCT_TEMPLATE = [
 			['cgb/veldhuizen-product-grid', {}],
-			['cgb/veldhuizen-product-contact', {}],
 			['cgb/block-veldhuizen-product-information', {}],
 			['cgb/block-veldhuizen-product-footer', {}]
 		];

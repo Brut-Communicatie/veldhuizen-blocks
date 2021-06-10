@@ -262,6 +262,32 @@
     @media (min-width: 1440px) {
       .veldhuizen__container--product-grid h1 {
         font-size: 2.5em; } }
+  .veldhuizen__container--product-grid button {
+    position: static;
+    width: 100%;
+    background-color: #ff5400;
+    color: white;
+    margin: 1.2rem 0;
+    padding: 15px 20%;
+    -webkit-transition: box-shadow 0.3s ease-in-out;
+    -o-transition: box-shadow 0.3s ease-in-out;
+    -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
+    transition: -webkit-box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out; }
+    @media (min-width: 500px) {
+      .veldhuizen__container--product-grid button {
+        padding: 15px 30%; } }
+    @media (min-width: 740px) {
+      .veldhuizen__container--product-grid button {
+        width: 250px;
+        padding: 15px 45px; } }
+    .veldhuizen__container--product-grid button i {
+      float: left; }
+  .veldhuizen__container--product-grid button:hover {
+    text-decoration: underline;
+    -webkit-box-shadow: 2px 2px 5px #818181;
+            box-shadow: 2px 2px 5px #818181; }
   .veldhuizen__container--product-grid .modal {
     display: none;
     position: fixed;
@@ -487,6 +513,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
       margin-right: 2rem;
       font-style: normal; }
+  .veldhuizen__container--product-info .veldhuizen__container--product-contact {
+    margin: 0; }
   .veldhuizen__container--product-info button {
     position: static;
     width: 100%;
@@ -588,6 +616,8 @@
   @media screen and (max-width: calc(1000px + 5px)) {
     .veldhuizen__container--verhuur-wrapper {
       width: calc(100% - 1rem); } }
+  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .print-button {
+    display: none; }
   @media (min-width: 1024px) {
     .veldhuizen__container--verhuur-wrapper {
       display: -ms-flexbox;

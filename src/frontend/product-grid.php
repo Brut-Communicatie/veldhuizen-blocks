@@ -19,8 +19,9 @@ function veldhuizen_product_grid($attributes){
                 echo "<img src='" . $image['imgURL'] . "' class='gallery-pictures no-print' onmouseover='expandImage(this)' onclick='openModal(event)' />";
                 echo '</div>';
             }
-
         echo "</div>";
+        
+        echo '<button onclick="window.print();return false" class="print-button no-print"><i class="fas fa-print"></i> Print lijst</button>';
 
         echo '<div id="myModal" class="modal">';
             echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
