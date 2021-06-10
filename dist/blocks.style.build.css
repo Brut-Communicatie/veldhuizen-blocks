@@ -373,6 +373,27 @@
         image-rendering: crisp-edges; }
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper:nth-of-type(6n+7) {
       margin-right: 0; }
+
+.veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid {
+  -ms-flex-order: 1;
+      order: 1; }
+  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid h1 {
+    display: none; }
+  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper {
+    margin-top: 70px;
+    max-width: 550px; }
+    .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures {
+      width: 100%;
+      height: auto;
+      margin-right: 5%; }
+      .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(3n+4) {
+        margin-right: 0; }
+
+.veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-footer {
+  -ms-flex-order: 3;
+      order: 3;
+  margin-top: 1.2rem;
+  width: 100%; }
 /**
  * #.# Common SCSS
  *
@@ -606,26 +627,6 @@
         text-align: right; }
       .veldhuizen__container--verhuur-wrapper .wp-block-cgb-block-veldhuizen-verhuur-table table tr td:first-child {
         text-align: left; }
-  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid {
-    -ms-flex-order: 1;
-        order: 1; }
-    .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid h1 {
-      display: none; }
-    @media (min-width: 1024px) {
-      .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper {
-        margin-top: 70px;
-        width: 550px; }
-        .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures {
-          width: 30%;
-          height: 100px;
-          margin-right: 5%; }
-          .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(3n+4) {
-            margin-right: 0; } }
-  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-footer {
-    -ms-flex-order: 3;
-        order: 3;
-    margin-top: 1.2rem;
-    width: 100%; }
 /**
  * #.# Common SCSS
  *

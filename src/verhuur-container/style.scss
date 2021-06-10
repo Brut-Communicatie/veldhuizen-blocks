@@ -64,34 +64,5 @@
 			}
 		}
 	}
-    .veldhuizen__container--product-grid {
-        order: 1;
-    
-        h1 {
-            display: none;
-        }
-    
-        @include tablet {
-            .product-grid-wrapper {
-                margin-top: 70px;
-                width: 550px;
-    
-                .gallery-pictures {
-                    width: 30%;
-                    height: 100px;
-                    margin-right: 5%;
-                    
-                    &:nth-of-type(3n+4) {
-                        margin-right: 0;
-                    }
-                }
-            }
-        }
-    }
-    
-    .veldhuizen__container--product-footer {
-        order: 3;
-        margin-top: 1.2rem;
-        width: 100%;
-    }
+
 }
