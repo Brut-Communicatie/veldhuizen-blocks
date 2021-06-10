@@ -92,11 +92,7 @@ registerBlockType( 'cgb/block-veldhuizen-product-information', {
 		// }
 		
 		// FUNCTIONS
-        const updateContent = (value) => {
-            props.setAttributes({
-                content: value,
-            });
-        }
+       
 
 		// window.addEventListener('load', injectPInfo, false)
 		
