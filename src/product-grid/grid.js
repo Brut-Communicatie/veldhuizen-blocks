@@ -110,11 +110,11 @@ import { TextControl, TextareaControl } from '@wordpress/components';
 		// RETURN TO BACKEND
 		return (
 			<div className="veldhuizen__gallery">
-				<TextControl 
+				{/* <TextControl 
                     label="Heading"
                     value={ props.attributes.title }
                     onChange={ (value) => updateTitle(value) }
-                />
+                /> */}
 				{
 					(props.attributes.imgArray) ? (
 						<div className="img-upload-wrapper" >

@@ -15,7 +15,6 @@ function veldhuizen_product_information($attributes) {
 	echo '<p id="product-info">' . $clean_content . '</p>';
 
 	echo "<div class='veldhuizen__container--product-contact no-print'>";
-    echo '<button id="productContactButton"><i class="fas fa-phone"></i>Neem contact op</button>';
     echo "</div>";
 
     echo '</div>';

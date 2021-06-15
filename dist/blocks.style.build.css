@@ -246,22 +246,6 @@
   padding-right: 1.2rem;
   /* Position the "next button" to the right */
   /* On hover, add a black background color with a little bit see-through */ }
-  .veldhuizen__container--product-grid h1 {
-    font-size: 1em;
-    color: #0b9a71;
-    padding-top: 1rem; }
-    @media (min-width: 500px) {
-      .veldhuizen__container--product-grid h1 {
-        font-size: 1.5em; } }
-    @media (min-width: 740px) {
-      .veldhuizen__container--product-grid h1 {
-        font-size: 1.8em; } }
-    @media (min-width: 1024px) {
-      .veldhuizen__container--product-grid h1 {
-        font-size: 2em; } }
-    @media (min-width: 1440px) {
-      .veldhuizen__container--product-grid h1 {
-        font-size: 2.5em; } }
   .veldhuizen__container--product-grid button {
     position: static;
     width: 100%;
@@ -360,7 +344,7 @@
   .veldhuizen__container--product-grid .next:hover {
     background-color: rgba(0, 0, 0, 0.8); }
   .veldhuizen__container--product-grid .product-grid-wrapper {
-    width: 100%; }
+    width: 60%; }
     .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper {
       width: 100%; }
       .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
@@ -468,7 +452,8 @@
       flex-direction: column;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  position: relative; }
+  position: relative;
+  padding-bottom: 1.2rem; }
   .veldhuizen__container--product-info:before {
     content: "";
     position: absolute;
@@ -548,7 +533,6 @@
  * that are used across the project.
 */
 .veldhuizen__container--product-footer {
-  background-color: #0b9a71;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -556,28 +540,23 @@
   position: relative;
   -ms-flex-align: center;
       align-items: center;
-  padding: 10px 0; }
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
   .veldhuizen__container--product-footer a {
-    color: white;
+    color: grey;
     position: static;
-    font-size: 0.7em; }
-  @media (min-width: 740px) {
-    .veldhuizen__container--product-footer {
-      -ms-flex-direction: row;
-          flex-direction: row;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-      height: 50px; }
-      .veldhuizen__container--product-footer :first-child {
-        margin-left: 1.2rem; }
-      .veldhuizen__container--product-footer :last-child {
-        margin-right: 1.2rem; } }
+    font-size: 0.7em;
+    padding: 1rem 1.2rem;
+    border: 1px solid white; }
   @media (min-width: 1024px) {
     .veldhuizen__container--product-footer a {
       font-size: 1em; } }
   .veldhuizen__container--product-footer a:hover {
     color: white;
-    text-decoration: underline;
+    background-color: #0b9a71;
+    text-decoration: none;
     cursor: pointer; }
 
 .footer-links, .footer-links:visited {

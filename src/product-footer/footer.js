@@ -79,8 +79,8 @@ registerBlockType('cgb/block-veldhuizen-product-footer', {
 
 		// RETURN TO BACKEND
 		return ( 
-            <div className = "veldhuizen__product-footer">
-			<h4> Footer </h4> 
+            <div className="veldhuizen__product-footer">
+			<p> Vorige / Volgende banner </p> 
             </div>
 		)
 	},

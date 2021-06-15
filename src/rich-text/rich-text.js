@@ -10,7 +10,8 @@ import './editor.scss';
 import './style.scss';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-import { RichText } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
+
 
 /**
  * Register: aa Gutenberg Block.
@@ -56,6 +57,8 @@ import { RichText } from '@wordpress/block-editor';
 	 */
 	edit: ( props ) => {
 		// FUNCTIONS
+		const blockProps = useBlockProps()
+
         const updateContent = (value) => {
             props.setAttributes({
                 content: value,
@@ -67,8 +70,10 @@ import { RichText } from '@wordpress/block-editor';
             <div class="rich-text-wrapper-container">
                 <div class="rich-text-wrapper-be">
                     <RichText 
-                        label="Nieuws artikel"
-                        placeholder="Hier gaat de tekst waar het nieuws artikel over gaat"
+						{ ...blockProps }
+						tagName="p"
+                        label="Text editor Veldhuizen"
+						placeholder="Hier gaat de tekst"
                         value={ props.attributes.content }
                         onChange={ (value) => updateContent(value) }
                     />
@@ -89,6 +94,9 @@ import { RichText } from '@wordpress/block-editor';
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-        return props.attributes;
+		const blockProps = useBlockProps.save()
+
+        return <RichText.Content { ...blockProps } tagName="p" value={ props.attributes }  /> 
+		// return props.attributes
     },
 } );

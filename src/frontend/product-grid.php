@@ -9,7 +9,7 @@ function veldhuizen_product_grid($attributes){
 
     echo "<section class='veldhuizen__container--product-grid'>";
 
-     echo "<h1>" . $title . "</h1>";
+    //  echo "<h1>" . $title . "</h1>";
          echo "<div class='product-grid-wrapper'>";
             echo '<div id="big-image-wrapper">';
             echo "<img id='big-image' src='" . $images[0]['imgURL'] . "'onclick='openModal(event)' />";
