@@ -10,7 +10,7 @@
 				width: 100%;
 				background-color: #ff5400;
 				color: white;
-                margin: 1.2rem 0;
+				margin: 1.2rem 0;
 				padding: 15px 20%;
 				-webkit-transition: background-color 0.3s ease-in-out;
 				-moz-transition: background-color 0.3s ease-in-out;
@@ -34,7 +34,7 @@
 			button:hover {
 				background-color: #555555;
 				cursor: pointer;
-            }
+			}
 
 			// MODAL STYLING
 			.modal {
@@ -175,15 +175,32 @@
 	}
 }
 
+
+// STYLING FOR VERHUUR PAGES
 .veldhuizen__container--verhuur-wrapper {
+	position: relative;
+	padding-bottom: 1.2rem;
+	.print-button-wrapper {
+		button {
+			-webkit-transition: background-color 0.3s ease-in-out;
+			-moz-transition: background-color 0.3s ease-in-out;
+			-o-transition: background-color 0.3s ease-in-out;
+			transition: background-color 0.3s ease-in-out;
+			&:hover {
+				background-color: #555555;
+				cursor: pointer;
+			}
+		}
+	}
+
 	.veldhuizen__container--product-grid {
 		order: 1;
-
 		h1 {
 			display: none;
 		}
 
 		.product-grid-wrapper {
+			width: auto;
 			margin-top: 70px;
 			max-width: 550px;
 
@@ -196,13 +213,11 @@
 					margin-right: 0;
 				}
 			}
+
+			@include Responsive($tabletBreakpoint) {
+				margin-top: 0;
+				max-width: none;
+			}
 		}
-
-	}
-
-	.veldhuizen__container--product-footer {
-		order: 3;
-		margin-top: 1.2rem;
-		width: 100%;
 	}
 }

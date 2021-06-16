@@ -230,10 +230,6 @@
         padding: 15px 45px; } }
     .veldhuizen__container--verhuur-wrapper .print-button-wrapper button i {
       float: left; }
-  .veldhuizen__container--verhuur-wrapper .print-button-wrapper button:hover {
-    text-decoration: underline;
-    -webkit-box-shadow: 2px 2px 5px #818181;
-            box-shadow: 2px 2px 5px #818181; }
 /**
  * #.# Common SCSS
  *
@@ -380,26 +376,35 @@
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper:nth-of-type(6n+7) {
       margin-right: 0; }
 
-.veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid {
-  -ms-flex-order: 1;
-      order: 1; }
-  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid h1 {
-    display: none; }
-  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper {
-    margin-top: 70px;
-    max-width: 550px; }
-    .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures {
-      width: 100%;
-      height: auto;
-      margin-right: 5%; }
-      .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(3n+4) {
-        margin-right: 0; }
-
-.veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-footer {
-  -ms-flex-order: 3;
-      order: 3;
-  margin-top: 1.2rem;
-  width: 100%; }
+.veldhuizen__container--verhuur-wrapper {
+  position: relative;
+  padding-bottom: 1.2rem; }
+  .veldhuizen__container--verhuur-wrapper .print-button-wrapper button {
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out; }
+    .veldhuizen__container--verhuur-wrapper .print-button-wrapper button:hover {
+      background-color: #555555;
+      cursor: pointer; }
+  .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid {
+    -ms-flex-order: 1;
+        order: 1; }
+    .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid h1 {
+      display: none; }
+    .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper {
+      width: auto;
+      margin-top: 70px;
+      max-width: 550px; }
+      .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures {
+        width: 100%;
+        height: auto;
+        margin-right: 5%; }
+        .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures:nth-of-type(3n+4) {
+          margin-right: 0; }
+      @media screen and (max-width: calc(1024px + 5px)) {
+        .veldhuizen__container--verhuur-wrapper .veldhuizen__container--product-grid .product-grid-wrapper {
+          margin-top: 0;
+          max-width: none; } }
 /**
  * #.# Common SCSS
  *
