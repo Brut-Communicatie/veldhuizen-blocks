@@ -2,8 +2,11 @@
 	&__container {
 		&--product-wrapper {
 			width: $containerWrapper;
+			position: relative;
 			margin: 0 auto;
 			background-color: white;
+			margin-top: 3rem;
+			padding-top: 1.2rem;
 			box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 17px 1px;
 			
 			@include Responsive($containerWrapper) {
