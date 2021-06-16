@@ -343,16 +343,16 @@
         -o-object-fit: cover;
            object-fit: cover;
         width: 100%;
-        max-height: 620px;
+        max-height: 385px;
         height: auto;
         display: block;
         margin-top: 1rem; }
         @media screen and (max-width: calc(1024px + 5px)) {
           .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
-            max-height: 450px; } }
+            max-height: 300px; } }
         @media screen and (max-width: calc(820px + 5px)) {
           .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
-            max-height: 400px; } }
+            max-height: 260px; } }
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper {
       display: inline-block;
       width: 15%;
@@ -361,20 +361,61 @@
       .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
         -webkit-transition: .1s ease-in-out;
         -o-transition: .1s ease-in-out;
-        transition: .1s ease-in-out; }
+        transition: .1s ease-in-out;
+        -o-object-fit: cover;
+           object-fit: cover;
+        width: 100%;
+        max-height: 56px; }
+        @media screen and (max-width: calc(1000px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 45px; } }
+        @media screen and (max-width: calc(825px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 40px; } }
+        @media screen and (max-width: calc(745px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 60px; } }
+        @media screen and (max-width: calc(660px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 50px; } }
+        @media screen and (max-width: calc(500px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 40px; } }
+        @media screen and (max-width: calc(455px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 35px; } }
+        @media screen and (max-width: calc(415px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 30px; } }
+        @media screen and (max-width: calc(350px + 5px)) {
+          .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img {
+            max-height: 25px; } }
       .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper img:hover {
         -webkit-transform: scale(1.1);
             -ms-transform: scale(1.1);
                 transform: scale(1.1);
         image-rendering: -moz-crisp-edges;
-        /* Firefox */
         image-rendering: -o-crisp-edges;
-        /* Opera */
         image-rendering: -webkit-optimize-contrast;
-        /* Webkit (non-standard naming) */
         image-rendering: crisp-edges; }
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper:nth-of-type(6n+7) {
       margin-right: 0; }
+    @media screen and (max-width: calc(740px + 5px)) {
+      .veldhuizen__container--product-grid .product-grid-wrapper {
+        width: 100%; }
+        .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper {
+          margin-top: 30px; }
+          .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
+            max-height: 350px; } }
+    @media screen and (max-width: calc(600px + 5px)) {
+      .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
+        max-height: 300px; } }
+    @media screen and (max-width: calc(535px + 5px)) {
+      .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
+        max-height: 250px; } }
+    @media screen and (max-width: calc(450px + 5px)) {
+      .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper #big-image {
+        max-height: 200px; } }
 
 .veldhuizen__container--verhuur-wrapper {
   position: relative;
