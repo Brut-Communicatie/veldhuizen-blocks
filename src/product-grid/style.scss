@@ -12,10 +12,10 @@
 				color: white;
                 margin: 1.2rem 0;
 				padding: 15px 20%;
-				-webkit-transition: box-shadow 0.3s ease-in-out;
-				-moz-transition: box-shadow 0.3s ease-in-out;
-				-o-transition: box-shadow 0.3s ease-in-out;
-				transition: box-shadow 0.3s ease-in-out;
+				-webkit-transition: background-color 0.3s ease-in-out;
+				-moz-transition: background-color 0.3s ease-in-out;
+				-o-transition: background-color 0.3s ease-in-out;
+				transition: background-color 0.3s ease-in-out;
 
 				@include sm {
 					padding: 15px 30%;
@@ -32,8 +32,8 @@
 			}
 
 			button:hover {
-				text-decoration: underline;
-				box-shadow: 2px 2px 5px rgb(129, 129, 129);
+				background-color: #555555;
+				cursor: pointer;
             }
 
 			// MODAL STYLING

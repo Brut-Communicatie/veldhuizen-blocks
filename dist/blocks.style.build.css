@@ -253,12 +253,9 @@
     color: white;
     margin: 1.2rem 0;
     padding: 15px 20%;
-    -webkit-transition: box-shadow 0.3s ease-in-out;
-    -o-transition: box-shadow 0.3s ease-in-out;
-    -webkit-transition: -webkit-box-shadow 0.3s ease-in-out;
-    transition: -webkit-box-shadow 0.3s ease-in-out;
-    transition: box-shadow 0.3s ease-in-out;
-    transition: box-shadow 0.3s ease-in-out, -webkit-box-shadow 0.3s ease-in-out; }
+    -webkit-transition: background-color 0.3s ease-in-out;
+    -o-transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out; }
     @media (min-width: 500px) {
       .veldhuizen__container--product-grid button {
         padding: 15px 30%; } }
@@ -269,9 +266,8 @@
     .veldhuizen__container--product-grid button i {
       float: left; }
   .veldhuizen__container--product-grid button:hover {
-    text-decoration: underline;
-    -webkit-box-shadow: 2px 2px 5px #818181;
-            box-shadow: 2px 2px 5px #818181; }
+    background-color: #555555;
+    cursor: pointer; }
   .veldhuizen__container--product-grid .modal {
     display: none;
     position: fixed;
@@ -536,7 +532,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 1;
   color: #555555;
   text-decoration: none;
   border: 1px solid white;
@@ -557,7 +553,7 @@
       padding: 7px 10px; } }
 
 .veldhuizen__container--product-footer :first-child {
-  right: 41px; }
+  right: 42px; }
   @media screen and (max-width: calc(500px + 5px)) {
     .veldhuizen__container--product-footer :first-child {
       right: 30px; } }
