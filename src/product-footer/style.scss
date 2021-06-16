@@ -22,16 +22,19 @@
 					color: white;
 				}
 
-				
+				@include Responsive($mobileBreakpoint){
+					font-size: 13px;
+					padding: 7px 10px;
+				}
 			}
 			:first-child {
 				right: 41px;
-			}
-			@include tablet {
-				a {
-					font-size: 1em;
+
+				@include Responsive($mobileBreakpoint){
+					right: 30px;
 				}
 			}
+			
 		}
 	}
 }

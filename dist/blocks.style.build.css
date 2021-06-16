@@ -551,13 +551,16 @@
     background-color: #0b9a71;
     border: 1px solid gray;
     color: white; }
+  @media screen and (max-width: calc(500px + 5px)) {
+    .veldhuizen__container--product-footer a {
+      font-size: 13px;
+      padding: 7px 10px; } }
 
 .veldhuizen__container--product-footer :first-child {
   right: 41px; }
-
-@media (min-width: 1024px) {
-  .veldhuizen__container--product-footer a {
-    font-size: 1em; } }
+  @media screen and (max-width: calc(500px + 5px)) {
+    .veldhuizen__container--product-footer :first-child {
+      right: 30px; } }
 /**
  * #.# Common SCSS
  *
