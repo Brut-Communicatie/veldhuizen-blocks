@@ -4,7 +4,7 @@ function veldhuizen_rich_text($attributes) {
 
 	echo '<div class="veldhuizen-rich-text-wrapper">';
 	// var_dump($attributes['content']);
-	echo $attributes['content'];
+	echo '<p>' . $attributes['content'] . '</p>';
 	echo '</div>';
 	
 	return ob_get_clean();
