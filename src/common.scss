@@ -21,7 +21,7 @@ $padding-products: 1.2rem;
 $containerWidth: 1440px;
 $tabletBreakpoint: 1024px;
 $containerWrapper: 1000px;
-$tabletSmallBreakpoint: 740px;
+$tabletSmallBreakpoint: 768px;
 $mobileBreakpoint: 500px;
 
 @mixin Responsive($breakpoint){
@@ -29,6 +29,9 @@ $mobileBreakpoint: 500px;
 		@content;
 	}
 }
+
+
+// Niet weghalen, wordt ook nog ergens gebruikt
 @mixin sm {
 	@media (min-width: $mobileBreakpoint) {
 		@content;

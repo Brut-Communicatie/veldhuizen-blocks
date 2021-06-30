@@ -42,17 +42,17 @@
 			p {
 				margin: 0 0 0.5rem;
 				line-height: 1.5em;
-				font-size: 0.7em;
+				font-size: .95em;
 				color: grey;
                 
-                @include tabletSmall {
-                    font-size: 1em;
-                }
+				@include Responsive($tabletSmallBreakpoint){
+					font-size: 0.8em;
+				}
 
-                @include tablet {
-                    font-size: 1.1em;
-                }
-
+				@include Responsive($mobileBreakpoint){
+					font-size: 0.7em;
+					
+				}
                
 				:before {
 					position: initial;

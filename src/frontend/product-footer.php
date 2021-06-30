@@ -12,7 +12,7 @@ function veldhuizen_product_footer($attributes) {
         'posts_per_page' => -1,
         'order'          => 'ASC',
         'post_parent'    => $parent,
-        'post_status' => null,
+        'post_status'    => null,
         'post_type'      => $post_type,
     );
 

@@ -194,7 +194,7 @@
   @media (min-width: 500px) {
     .top__content h1 {
       font-size: 1em; } }
-  @media (min-width: 740px) {
+  @media (min-width: 768px) {
     .top__content h1 {
       font-size: 1.3em; } }
   @media (min-width: 1024px) {
@@ -224,7 +224,7 @@
     @media (min-width: 500px) {
       .veldhuizen__container--verhuur-wrapper .print-button-wrapper button {
         padding: 15px 30%; } }
-    @media (min-width: 740px) {
+    @media (min-width: 768px) {
       .veldhuizen__container--verhuur-wrapper .print-button-wrapper button {
         width: 250px;
         padding: 15px 45px; } }
@@ -255,7 +255,7 @@
     @media (min-width: 500px) {
       .veldhuizen__container--product-grid button {
         padding: 15px 30%; } }
-    @media (min-width: 740px) {
+    @media (min-width: 768px) {
       .veldhuizen__container--product-grid button {
         width: 250px;
         padding: 15px 45px; } }
@@ -281,6 +281,7 @@
       margin: 0;
       left: 50%;
       top: 50%;
+      z-index: 7;
       -webkit-transform: translate(-50%, -50%);
           -ms-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
@@ -400,7 +401,7 @@
         image-rendering: crisp-edges; }
     .veldhuizen__container--product-grid .product-grid-wrapper .gallery-pictures-wrapper:nth-of-type(6n+7) {
       margin-right: 0; }
-    @media screen and (max-width: calc(740px + 5px)) {
+    @media screen and (max-width: calc(768px + 5px)) {
       .veldhuizen__container--product-grid .product-grid-wrapper {
         width: 100%; }
         .veldhuizen__container--product-grid .product-grid-wrapper #big-image-wrapper {
@@ -471,7 +472,7 @@
     @media (min-width: 500px) {
       .veldhuizen__container--product-contact button {
         padding: 15px 30%; } }
-    @media (min-width: 740px) {
+    @media (min-width: 768px) {
       .veldhuizen__container--product-contact button {
         width: 250px;
         padding: 15px 45px; } }
@@ -510,7 +511,7 @@
     @media (min-width: 500px) {
       .veldhuizen__container--product-info h2 {
         font-size: 1.5em; } }
-    @media (min-width: 740px) {
+    @media (min-width: 768px) {
       .veldhuizen__container--product-info h2 {
         font-size: 1.7em; } }
     @media (min-width: 1024px) {
@@ -522,14 +523,14 @@
   .veldhuizen__container--product-info p {
     margin: 0 0 0.5rem;
     line-height: 1.5em;
-    font-size: 0.7em;
+    font-size: .95em;
     color: grey; }
-    @media (min-width: 740px) {
+    @media screen and (max-width: calc(768px + 5px)) {
       .veldhuizen__container--product-info p {
-        font-size: 1em; } }
-    @media (min-width: 1024px) {
+        font-size: 0.8em; } }
+    @media screen and (max-width: calc(500px + 5px)) {
       .veldhuizen__container--product-info p {
-        font-size: 1.1em; } }
+        font-size: 0.7em; } }
     .veldhuizen__container--product-info p :before {
       position: initial;
       border: none; }
@@ -558,7 +559,7 @@
     @media (min-width: 500px) {
       .veldhuizen__container--product-info button {
         padding: 15px 30%; } }
-    @media (min-width: 740px) {
+    @media (min-width: 768px) {
       .veldhuizen__container--product-info button {
         width: 250px;
         padding: 15px 45px; } }
