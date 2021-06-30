@@ -31,7 +31,7 @@ $mobileBreakpoint: 500px;
 }
 
 
-// Niet weghalen, wordt ook nog ergens gebruikt
+// DO NOT REMOVED, STILL BEING USED SOMEWHERE
 @mixin sm {
 	@media (min-width: $mobileBreakpoint) {
 		@content;

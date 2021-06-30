@@ -18,24 +18,35 @@
 			color: #fff;
 			border: 2px solid #fff;
 			text-transform: uppercase;
+			@include Responsive($tabletBreakpoint) {
+				font-size: 1.5em;
+				text-align: center;
+			}
+			@include Responsive($tabletSmallBreakpoint) {
+				font-size: 1.3em;
+			}
+			@include Responsive($mobileBreakpoint) {
+				font-size: 1em;
+			}
 		}
-
-        @include sm {
-            h1 {
-                font-size: 1em;
-            }
-        }
-
-        @include tabletSmall {
-            h1 {
-                font-size: 1.3em;
-            }
-        }
-
-        @include tablet {
-            h1 {
-                font-size: 1.5em;
-            }
-        }
 	}
 }
+
+
+// @include sm {
+// 	h1 {
+// 		font-size: 1em;
+// 	}
+// }
+
+// @include tabletSmall {
+// 	h1 {
+// 		font-size: 1.3em;
+// 	}
+// }
+
+// @include tablet {
+// 	h1 {
+// 		font-size: 1.5em;
+// 	}
+// }

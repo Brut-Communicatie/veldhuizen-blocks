@@ -191,15 +191,16 @@
     color: #fff;
     border: 2px solid #fff;
     text-transform: uppercase; }
-  @media (min-width: 500px) {
-    .top__content h1 {
-      font-size: 1em; } }
-  @media (min-width: 768px) {
-    .top__content h1 {
-      font-size: 1.3em; } }
-  @media (min-width: 1024px) {
-    .top__content h1 {
-      font-size: 1.5em; } }
+    @media screen and (max-width: calc(1024px + 5px)) {
+      .top__content h1 {
+        font-size: 1.5em;
+        text-align: center; } }
+    @media screen and (max-width: calc(768px + 5px)) {
+      .top__content h1 {
+        font-size: 1.3em; } }
+    @media screen and (max-width: calc(500px + 5px)) {
+      .top__content h1 {
+        font-size: 1em; } }
 /**
  * #.# Common SCSS
  *
