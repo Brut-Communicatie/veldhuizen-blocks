@@ -22,6 +22,7 @@ function veldhuizen_product_grid($attributes){
         echo "</div>";
         
         echo '<button onclick="window.print();return false" class="print-button no-print"><i class="fas fa-print"></i> Print lijst</button>';
+        echo '<button onclick="" class="print-button no-print">Terug naar overzicht</button>';
 
         echo '<div id="myModal" class="modal">';
             echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
@@ -35,6 +36,5 @@ function veldhuizen_product_grid($attributes){
     wp_enqueue_script( 'veldhuizen-product-gallery', get_template_directory_uri() . '/js/galleryBehavior.js', false, false );
 
     return ob_get_clean();
-
 }
 ?>

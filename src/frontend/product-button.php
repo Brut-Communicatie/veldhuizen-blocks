@@ -1,6 +1,6 @@
 <?php
 
-function veldhuizen_product_contact() {
+function veldhuizen_product_button() {
     ob_start();
 
 

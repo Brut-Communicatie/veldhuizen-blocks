@@ -15,7 +15,7 @@ import './intro/intro.js';
 import './banner/banner.js';
 import './verhuur-table/verhuurTable.js';
 import './product-grid/grid.js';
-import './product-contact/contactButton.js';
+import './product-button/productButton.js';
 import './product-information/productInformation.js';
 import './product-footer/footer.js';
 import './container-block/container.js';
