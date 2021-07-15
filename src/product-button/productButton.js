@@ -11,7 +11,8 @@ import './style.scss';
 import { InnerBlocks } from '@wordpress/block-editor';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
-const { Button } = wp.components;
+const { Button, RadioControl } = wp.components;
+const { withState } = wp.compose;
 
 
 
@@ -29,19 +30,21 @@ const { Button } = wp.components;
  *                             registered; otherwise `undefined`.
  */
 
- registerBlockType( 'cgb/veldhuizen-product-contact', {
+ registerBlockType( 'cgb/veldhuizen-product-button', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'Veldhuizen Product Contact' ), // Block title.
+	title: __( 'Veldhuizen Product Button' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'Veldhuizen' ),
-		__( 'Product contact' ),
-		__( 'Contact' ),
+		__( 'Product button' ),
+		__( 'Button' ),
 	],
 
 	attributes: {
-
+		functionality: {
+			type: 'string'
+		}
 	},
 
 	/**
@@ -56,10 +59,38 @@ const { Button } = wp.components;
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
+		// const print = ['Print lijst', 'print-button-icon', 'print-button']
+		// const back = ['Terug naar overzicht', '', 'terug-button']
+
+		const print = 'print'
+		const back = 'back'
+
+
+
+		const saveFunc = (value) => {
+			props.setAttributes({
+				functionality: value,
+			})
+			console.log(props.attributes.functionality)
+		}
+
+		const MyControlledRadioRadioGroup = () => {
+			const [ checked, setChecked ] = useState( '25' );
+			<RadioGroup label="Width" onChange={ setChecked } checked={ checked }>
+					<Radio value="25">25%</Radio>
+					<Radio value="50">50%</Radio>
+					<Radio value="75">75%</Radio>
+					<Radio value="100">100%</Radio>
+			</RadioGroup>
+		};
+
 		// RETURN TO BACKEND
 		return (
-			<div className="veldhuizen__contact">
-				<h4>Contact Button</h4>
+			<div className="veldhuizen-product-button-wrapper">
+				{/* <Button onClick={ (value) => saveFunc(print) } >Print</Button>
+				<Button value={back} onClick={saveFunc} >Terug</Button> */}
+				MyControlledRadioRadioGroup()
+				
 			</div>
 		)
 	},
@@ -76,6 +107,6 @@ const { Button } = wp.components;
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
-        return null;
+        return props.attributes;
     },
 } );

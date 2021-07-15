@@ -9,33 +9,40 @@
 
 			button {
 				position: static;
-				width: 100%;
+				width: 48%;
 				background-color: #ff5400;
 				color: white;
 				margin: 1.2rem 0;
-				padding: 15px 20%;
+				padding: 15px;
 				-webkit-transition: background-color 0.3s ease-in-out;
 				-moz-transition: background-color 0.3s ease-in-out;
 				-o-transition: background-color 0.3s ease-in-out;
 				transition: background-color 0.3s ease-in-out;
 
-				@include sm {
-					padding: 15px 30%;
-				}
-
-				@include tabletSmall {
-					width: 250px;
-					padding: 15px 45px;
-				}
-
 				i {
-					float: left;
+					margin-right: 20px;
 				}
+
+				@include Responsive($mobileBreakpoint) {
+					font-size: 11px;
+				}
+
 			}
 
 			button:hover {
 				background-color: #555555;
 				cursor: pointer;
+			}
+
+			#back-overview-button {
+				background-color: white;
+				color: #555555;
+				border-color: #555555;
+				float: right;
+				&:hover {
+					background-color: #555555;
+					color: white;
+				}
 			}
 
 			// MODAL STYLING
