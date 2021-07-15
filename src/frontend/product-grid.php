@@ -2,14 +2,15 @@
 
 function veldhuizen_product_grid($attributes){
     ob_start();
-
+    global $wp_query;
+    $parentPost = get_post_parent($wp_query->post->ID);
+    $parentLink = get_the_permalink($parentPost);
+    
     $title = $attributes['title'];
-
     $images = $attributes['imgArray'];
 
     echo "<section class='veldhuizen__container--product-grid'>";
 
-    //  echo "<h1>" . $title . "</h1>";
          echo "<div class='product-grid-wrapper'>";
             echo '<div id="big-image-wrapper">';
             echo "<img id='big-image' src='" . $images[0]['imgURL'] . "'onclick='openModal(event)' />";
@@ -22,7 +23,7 @@ function veldhuizen_product_grid($attributes){
         echo "</div>";
         
         echo '<button onclick="window.print();return false" class="print-button no-print"><i class="fas fa-print"></i> Print lijst</button>';
-        echo '<button onclick="" class="print-button no-print">Terug naar overzicht</button>';
+        echo '<a href=".' . $parentLink .  '"><button  class="print-button no-print" id="back-overview-button">Terug naar overzicht</button></a>';
 
         echo '<div id="myModal" class="modal">';
             echo '<span class="close cursor" onclick="closeModal()">&times;</span>';
